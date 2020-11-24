@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 
 import { Switch, Route } from "react-router-dom";
-// import Navigation from "./components/Navigation";
+// import Navbar from "./components/Navbar";
 // import Loading from "./components/Loading";
 // import MessageBox from "./components/MessageBox";
 // import SignUp from "./pages/SignUp";
@@ -25,8 +25,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Navigation />
-      <MessageBox /> */}
+      {/* <NavBar /> */}
+      {/* <MessageBox />  */}
       <h1>HELLO TALENT HUB</h1>
       <Switch>
         {/* {isLoading ? <Loading /> : null} */}
