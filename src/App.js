@@ -12,6 +12,7 @@ import { getUserWithStoredToken } from "./store/user/actions";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import HomePage from "./pages/HomePage";
+import AllTalents from "./pages/AllTalents";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function App() {
         {/* {isLoading ? <Loading /> : null} */}
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/talents" component={AllTalents} />
         <Route exact path="/" component={HomePage} />
       </Switch>
     </div>

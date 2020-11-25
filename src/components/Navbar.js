@@ -5,13 +5,43 @@ import { selectToken, selectUser } from "../store/user/selectors";
 import { Link } from "react-router-dom";
 import { Avatar, Button } from "@material-ui/core";
 import { getUserWithStoredToken, logOut } from "../store/user/actions";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+  small: {
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+  },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+  },
+}));
 
 const Navbar = () => {
+  const classes = useStyles();
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const userLoggedIn = useSelector(selectUser);
   console.log("i am token", token);
   console.log("i am user logged in imageurl", userLoggedIn.profileImageUrl);
+
+  //   function avatar(img) {
+  //     console.log("what is img?????", img);
+  //     return (
+  //       <Avatar
+  //         className={classes.large}
+  //         alt="user"
+  //         src={img ? new URL(img) : ""}
+  //       />
+  //     );
+  //   }
 
   return !token ? (
     <nav className="nav__main">
@@ -32,12 +62,8 @@ const Navbar = () => {
         <Link to="/signup" className="navbar__left__item1">
           Sign Up
         </Link>
-
-        <Avatar
-          className="navbar__left__item1"
-          alt="user"
-          src={userLoggedIn.profileImageUrl}
-        />
+        {/* {avatar(userLoggedIn.profileImageUrl)} */}
+        <Avatar className="navbar__left__item1" alt="user" src="" />
       </div>
     </nav>
   ) : userLoggedIn.isAdmin ? (
@@ -71,7 +97,12 @@ const Navbar = () => {
           logout
         </Button>
 
-        <Avatar className="navbar__left__item1" alt="user" src="" />
+        {/* {avatar(userLoggedIn.profileImageUrl)} */}
+        <Avatar
+          className="navbar__left__item1"
+          alt="user"
+          src={userLoggedIn.profileImageUrl}
+        />
       </div>
     </nav>
   ) : userLoggedIn.isTalent ? (
@@ -86,6 +117,9 @@ const Navbar = () => {
       </div>
 
       <div className="navbar__right">
+        <span>
+          {userLoggedIn.firstName} {userLoggedIn.lastName} |
+        </span>
         <Button
           onClick={() => dispatch(logOut())}
           to="/signup"
@@ -93,8 +127,12 @@ const Navbar = () => {
         >
           logout
         </Button>
-
-        <Avatar className="navbar__left__item1" alt="user" src="" />
+        {/* {avatar(userLoggedIn.profileImageUrl)} */}
+        <Avatar
+          className="navbar__left__item1"
+          alt="user"
+          src={userLoggedIn.profileImageUrl}
+        />
       </div>
     </nav>
   ) : (
@@ -111,10 +149,6 @@ const Navbar = () => {
       </div>
 
       <div className="navbar__right">
-        <span>
-          {userLoggedIn.firstName} {userLoggedIn.lastName} |
-        </span>
-
         <Button
           onClick={() => dispatch(logOut())}
           to="/signup"
