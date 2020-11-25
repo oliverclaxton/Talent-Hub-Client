@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { getUserWithStoredToken } from "./store/user/actions";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ function App() {
         {/* {isLoading ? <Loading /> : null} */}
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/" component={HomePage} />
       </Switch>
     </div>
   );
