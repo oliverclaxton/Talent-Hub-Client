@@ -29,8 +29,8 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const userLoggedIn = useSelector(selectUser);
-  console.log("i am token", token);
-  console.log("i am user logged in imageurl", userLoggedIn.profileImageUrl);
+  // console.log("i am token", token);
+  // console.log("i am user logged in imageurl", userLoggedIn.profileImageUrl);
 
   //   function avatar(img) {
   //     console.log("what is img?????", img);
