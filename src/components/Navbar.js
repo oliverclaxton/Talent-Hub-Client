@@ -16,7 +16,9 @@ const Navbar = () => {
   return !token ? (
     <nav className="nav__main">
       <div className="navbar__left">
-        <Link className="navbar__left__item1">Home</Link>
+        <Link to="/" className="navbar__left__item1">
+          Home
+        </Link>
       </div>
       <div className="navbar__middle">
         <h1>Talent Hub</h1>
