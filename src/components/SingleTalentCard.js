@@ -21,13 +21,25 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TalentCard(props) {
+export default function SingleTalentCard(props) {
+  console.log(" i am props,", props.campaigns);
   const classes = useStyles();
 
+  if (!props.campaigns) {
+    return <h1>Loading</h1>;
+  }
+  props.campaigns.map((c) => {
+    console.log("i am c", c);
+  });
   const fullName = `${props.firstName} ${props.lastName}`;
+  const noCampaingsMessage = (
+    <div>
+      <p>No current Campigns</p>
+    </div>
+  );
 
   return (
-    <Link className={classes.font} to={`/talents/${props.id}`}>
+    <div>
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia className={classes.media} image={props.profileImageUrl} />
@@ -50,12 +62,17 @@ export default function TalentCard(props) {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
-          {/* <Link className={classes.font} to={`/talents/${props.id}`}> */}
-          Learn More
-          {/* </Link> */}
-        </CardActions>
       </Card>
-    </Link>
+      <h1>Current campaigns</h1>
+      {props.campaigns.length === 0
+        ? noCampaingsMessage
+        : props.campaigns.map((c) => {
+            return (
+              <ul>
+                <li>{c.title}</li>
+              </ul>
+            );
+          })}
+    </div>
   );
 }

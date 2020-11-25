@@ -13,6 +13,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import HomePage from "./pages/HomePage";
 import AllTalents from "./pages/AllTalents";
+import SinlgeTalent from "./pages/SinlgeTalent";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/talents" component={AllTalents} />
+        <Route exact path="/talents/:talentId" component={SinlgeTalent} />
         <Route exact path="/" component={HomePage} />
       </Switch>
     </div>
