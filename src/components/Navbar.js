@@ -108,9 +108,13 @@ const Navbar = () => {
   ) : userLoggedIn.isTalent ? (
     <nav className="nav__main">
       <div className="navbar__left">
-        <Link className="navbar__left__item1">Home</Link>
+        <Link to="/" className="navbar__left__item1">
+          Home
+        </Link>
         <span> | </span>
-        <Link className="navbar__left__item2">My Campaigns</Link>
+        <Link to="/myCampaigns" className="navbar__left__item2">
+          My Campaigns
+        </Link>
       </div>
       <div className="navbar__middle">
         <h1>Talent Hub</h1>
@@ -135,32 +139,7 @@ const Navbar = () => {
         />
       </div>
     </nav>
-  ) : (
-    <nav className="nav__main">
-      <div className="navbar__left">
-        <Link className="navbar__left__item1">Home</Link>
-        <span> | </span>
-        <Link className="navbar__left__item2">Talents</Link>
-        <span> | </span>
-        <Link className="navbar__left__item2">Campaigns</Link>
-      </div>
-      <div className="navbar__middle">
-        <h1>Talent Hub</h1>
-      </div>
-
-      <div className="navbar__right">
-        <Button
-          onClick={() => dispatch(logOut())}
-          to="/signup"
-          className="navbar__left__item1"
-        >
-          logout
-        </Button>
-
-        <Avatar className="navbar__left__item1" alt="user" src="" />
-      </div>
-    </nav>
-  );
+  ) : null;
 };
 
 export default Navbar;
