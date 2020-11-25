@@ -45,17 +45,26 @@ const Navbar = () => {
   ) : userLoggedIn.isAdmin ? (
     <nav className="nav__main">
       <div className="navbar__left">
-        <Link className="navbar__left__item1">Home</Link>
+        <Link to="/" className="navbar__left__item1">
+          Home
+        </Link>
         <span> | </span>
-        <Link className="navbar__left__item2">Talents</Link>
+        <Link to="/talents" className="navbar__left__item2">
+          Talents
+        </Link>
         <span> | </span>
-        <Link className="navbar__left__item2">Campaigns</Link>
+        <Link to="/campaigns" className="navbar__left__item2">
+          Campaigns
+        </Link>
       </div>
       <div className="navbar__middle">
         <h1>Talent Hub</h1>
       </div>
 
       <div className="navbar__right">
+        <span>
+          {userLoggedIn.firstName} {userLoggedIn.lastName} |
+        </span>
         <Button
           onClick={() => dispatch(logOut())}
           to="/signup"
@@ -104,6 +113,10 @@ const Navbar = () => {
       </div>
 
       <div className="navbar__right">
+        <span>
+          {userLoggedIn.firstName} {userLoggedIn.lastName} |
+        </span>
+
         <Button
           onClick={() => dispatch(logOut())}
           to="/signup"
