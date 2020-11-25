@@ -1,0 +1,33 @@
+* {
+  font-family: "Playfair Display", serif;
+}
+.nav__main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar__left {
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  min-width: 13vw;
+  justify-content: space-around;
+}
+
+.navbar__middle {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 30px;
+  align-items: center;
+}
+.navbar__right {
+  border: 1px solid red;
+  display: flex;
+  padding: 20px 30px;
+  align-items: center;
+  min-width: 13vw;
+  justify-content: space-around;
+}
