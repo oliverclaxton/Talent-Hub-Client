@@ -17,10 +17,6 @@ const Navbar = () => {
     <nav className="nav__main">
       <div className="navbar__left">
         <Link className="navbar__left__item1">Home</Link>
-        <span> | </span>
-        <Link className="navbar__left__item2">Talents</Link>
-        <span> | </span>
-        <Link className="navbar__left__item2">Campaigns</Link>
       </div>
       <div className="navbar__middle">
         <h1>Talent Hub</h1>
