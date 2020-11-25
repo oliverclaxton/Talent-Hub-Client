@@ -27,40 +27,50 @@ const tokenStillValid = (userWithoutToken) => ({
 
 export const logOut = () => ({ type: LOG_OUT });
 
-// export const signUp = (name, email, password) => {
-//   return async (dispatch, getState) => {
-//     dispatch(appLoading());
-//     try {
-//       const response = await axios.post(`${apiUrl}/signup`, {
-//         name,
-//         email,
-//         password,
-//       });
+export const signUp = (
+  firstName,
+  lastName,
+  email,
+  password,
+  profileImageUrl
+) => {
+  return async (dispatch, getState) => {
+    dispatch(appLoading());
+    try {
+      const response = await axios.post(`${apiUrl}/signup`, {
+        firstName,
+        lastName,
+        email,
+        password,
+        profileImageUrl,
+      });
 
-//       dispatch(loginSuccess(response.data));
-//       dispatch(showMessageWithTimeout("success", true, "account created"));
-//       dispatch(appDoneLoading());
-//     } catch (error) {
-//       if (error.response) {
-//         // console.log(error.response.data.message);
-//         dispatch(setMessage("danger", true, error.response.data.message));
-//       } else {
-//         // console.log(error.message);
-//         dispatch(setMessage("danger", true, error.message));
-//       }
-//       dispatch(appDoneLoading());
-//     }
-//   };
-// };
+      dispatch(loginSuccess(response.data));
+      dispatch(showMessageWithTimeout("success", true, "account created"));
+      dispatch(appDoneLoading());
+    } catch (error) {
+      if (error.response) {
+        // console.log(error.response.data.message);
+        dispatch(setMessage("danger", true, error.response.data.message));
+      } else {
+        // console.log(error.message);
+        dispatch(setMessage("danger", true, error.message));
+      }
+      dispatch(appDoneLoading());
+    }
+  };
+};
 
 export const login = (email, password) => {
   return async (dispatch, getState) => {
+    console.log("email and password are", email, password);
     dispatch(appLoading());
     try {
       const response = await axios.post(`${apiUrl}/login`, {
         email,
         password,
       });
+      // console.log(" i am res.data in login", response.data);
 
       dispatch(loginSuccess(response.data));
       dispatch(showMessageWithTimeout("success", false, "welcome back!", 1500));

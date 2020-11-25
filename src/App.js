@@ -5,12 +5,12 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 // import Loading from "./components/Loading";
 // import MessageBox from "./components/MessageBox";
-// import SignUp from "./pages/SignUp";
-// import Login from "./pages/Login";
 
-import { useDispatch, useSelector } from "react-redux";
-import { selectAppLoading } from "./store/appState/selectors";
+import { useDispatch } from "react-redux";
+// import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +27,8 @@ function App() {
 
       <Switch>
         {/* {isLoading ? <Loading /> : null} */}
-        {/* <Route exact path="/" component={} /> */}
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
       </Switch>
     </div>
   );

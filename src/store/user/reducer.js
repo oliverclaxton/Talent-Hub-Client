@@ -2,11 +2,14 @@ import { LOG_OUT, LOGIN_SUCCESS, TOKEN_STILL_VALID } from "./actions";
 
 const initialState = {
   token: localStorage.getItem("token"),
-  name: null,
+  firstName: null,
   email: null,
+  isAdmin: null,
+  isTalent: null,
 };
 
 export default (state = initialState, action) => {
+  console.log("what is action.payload?", action.payload);
   switch (action.type) {
     case LOGIN_SUCCESS:
       localStorage.setItem("token", action.payload.token);
@@ -18,34 +21,6 @@ export default (state = initialState, action) => {
 
     case TOKEN_STILL_VALID:
       return { ...state, ...action.payload };
-
-    // case SPACE_UPDATED:
-    //   return {
-    //     ...state,
-    //     space: { ...action.payload, stories: state.space.stories },
-    //   };
-
-    // case STORY_POST_SUCCESS:
-    //   return {
-    //     ...state,
-    //     space: {
-    //       ...state.space,
-    //       stories: [...state.space.stories, action.payload],
-    //     },
-    //   };
-
-    // case STORY_DELETE_SUCCESS:
-    //   const storyId = action.payload;
-    //   const newStories = state.space.stories.filter(
-    //     (story) => story.id !== storyId
-    //   );
-    //   return {
-    //     ...state,
-    //     space: {
-    //       ...state.space,
-    //       stories: newStories,
-    //     },
-    //   };
 
     default:
       return state;
