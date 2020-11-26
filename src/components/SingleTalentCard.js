@@ -75,6 +75,9 @@ export default function SingleTalentCard(props) {
               </ul>
             );
           })}
+      <Link to={"/addCampaign"}>
+        <Button variant="contained">Add Campaign</Button>
+      </Link>
     </div>
   );
 }

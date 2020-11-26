@@ -113,6 +113,7 @@ export default function AddCampaign() {
             onChange={(event) => setTalent(event.target.value)}
             required
           >
+            <option value="">Select Talent</option>
             {allTalents.map((t) => {
               // console.log("i am t ", t);
               return (

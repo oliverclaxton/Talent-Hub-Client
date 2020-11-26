@@ -7,10 +7,13 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteCampaign } from "../store/campaigns/actions";
-import IconButton from "@material-ui/core/IconButton";
+import Form from "react-bootstrap/Form";
+import { Col } from "react-bootstrap";
+
+import ImageUploader from "./ImageUploader";
 
 const useStyles = makeStyles({
   root: {
@@ -28,27 +31,7 @@ const MySingleCampaignCard = (props) => {
   const classes = useStyles();
 
   const [statusColor, setStatusColor] = useState("green");
-
-  //   switch (props.statusId) {
-  //     case 1:
-  //       return setStatusColor("green");
-  //       break;
-  //     case 2:
-  //       return setStatusColor("orange");
-  //       break;
-
-  //     default:
-  //       setStatusColor("red");
-  //       break;
-  //   }
-
-  //   if (props.statusId === 1) {
-  //     setStatusColor("green");
-  //   } else if (props.statusId === 2) {
-  //     setStatusColor("orange");
-  //   } else {
-  //     setStatusColor("red");
-  //   }
+  const [caption, setCaption] = useState("");
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -104,7 +87,6 @@ const MySingleCampaignCard = (props) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-
       <CardActions>
         {props.campaignImages.map((ci) => {
           console.log("i am CICIC", ci);
@@ -116,20 +98,20 @@ const MySingleCampaignCard = (props) => {
           );
         })}
       </CardActions>
-      <div className={classes.root}>
-        <input
-          accept="image/*"
-          className={classes.input}
-          id="contained-button-file"
-          multiple
-          type="file"
-        />
-        <label htmlFor="contained-button-file">
-          <Button variant="contained" color="primary" component="span">
-            Upload
-          </Button>
-        </label>
-      </div>
+
+      <ImageUploader />
+      <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
+        <h1 className="mt-5 mb-5"></h1>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Control
+            value={caption}
+            onChange={(event) => setCaption(event.target.value)}
+            type="text"
+            placeholder="Enter caption"
+            required
+          />
+        </Form.Group>
+      </Form>
     </Card>
   );
 };
