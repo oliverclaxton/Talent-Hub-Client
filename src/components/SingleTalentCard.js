@@ -68,8 +68,10 @@ export default function SingleTalentCard(props) {
         ? noCampaingsMessage
         : props.campaigns.map((c) => {
             return (
-              <ul>
-                <li>{c.title}</li>
+              <ul key={c.id}>
+                <Link className={classes.font} to={`/campaigns/${c.id}`}>
+                  <li>{c.title}</li>
+                </Link>
               </ul>
             );
           })}

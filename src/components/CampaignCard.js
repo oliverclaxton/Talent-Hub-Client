@@ -30,39 +30,30 @@ const CampaignCard = (props) => {
   }
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardContent>
-          <Typography
-            className={classes.font}
-            gutterBottom
-            variant="h5"
-            component="h2"
-          >
-            {props.title}
-          </Typography>
-          <Typography
-            className={classes.font}
-            variant="body2"
-            color="textSecondary"
-            component="p"
-          >
-            {props.description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <h5>List of talents on this campaign are : </h5>
-        {props.talents.map((t) => {
-          console.log("i am uuuu", t);
-          return (
-            <div key={t.id}>
-              {t.firstName} {t.lastName}
-            </div>
-          );
-        })}
-      </CardActions>
-    </Card>
+    <Link className={classes.font} to={`/campaigns/${props.id}`}>
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardContent>
+            <Typography
+              className={classes.font}
+              gutterBottom
+              variant="h5"
+              component="h2"
+            >
+              {props.title}
+            </Typography>
+            <Typography
+              className={classes.font}
+              variant="body2"
+              color="textSecondary"
+              component="p"
+            >
+              {props.description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Link>
   );
 };
 
