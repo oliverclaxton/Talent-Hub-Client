@@ -25,7 +25,7 @@ const CampaignCard = (props) => {
   const classes = useStyles();
 
   console.log("i am props", props);
-  if (!props.talents) {
+  if (!props) {
     return <h1>Loading</h1>;
   }
 

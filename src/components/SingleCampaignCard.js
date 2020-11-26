@@ -7,7 +7,9 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { deleteCampaign } from "../store/campaigns/actions";
 
 const useStyles = makeStyles({
   root: {
@@ -46,6 +48,16 @@ const SingleCampaignCard = (props) => {
   //   } else {
   //     setStatusColor("red");
   //   }
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const onDelete = (id) => {
+    console.log("deleting campaign!", id);
+
+    dispatch(deleteCampaign(id));
+    history.push("/campaigns");
+  };
 
   console.log("i am props", props);
   if (!props.talents) {
@@ -115,6 +127,9 @@ const SingleCampaignCard = (props) => {
           );
         })}
       </CardActions>
+      <Button variant="danger" onClick={() => onDelete(props.id)}>
+        Delete
+      </Button>
     </Card>
   );
 };

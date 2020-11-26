@@ -20,7 +20,7 @@ const HomePage = () => {
         {!token ? (
           <Link to="/login">Let's get started</Link>
         ) : userLoggedIn.isAdmin ? (
-          <Link to="/campaigns">Let's get started</Link>
+          <Link to="/talents">Let's get started</Link>
         ) : userLoggedIn.isTalent ? (
           <Link to="/myCampaings">Let's get started</Link>
         ) : null}
