@@ -15,6 +15,8 @@ import HomePage from "./pages/HomePage";
 import AllTalents from "./pages/AllTalents";
 import SinlgeTalent from "./pages/SinlgeTalent";
 import AllCampaigns from "./pages/AllCampaigns";
+import SingleCampaign from "./pages/SingleCampaign";
+import AddCampaign from "./pages/AddCampaign";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +38,8 @@ function App() {
         <Route exact path="/talents" component={AllTalents} />
         <Route exact path="/campaigns" component={AllCampaigns} />
         <Route exact path="/talents/:talentId" component={SinlgeTalent} />
+        <Route exact path="/campaigns/:campaignId" component={SingleCampaign} />
+        <Route exact path="/addCampaign" component={AddCampaign} />
         <Route exact path="/" component={HomePage} />
       </Switch>
     </div>
