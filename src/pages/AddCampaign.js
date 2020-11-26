@@ -6,9 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAllTalents } from "../store/talents/selectors";
 import { getAllTalents } from "../store/talents/actions";
 import { addCampaign } from "../store/campaigns/actions";
+import { useHistory } from "react-router-dom";
 
 export default function AddCampaign() {
   const dispatch = useDispatch();
+  const history = useHistory();
   //   const isLoading = useSelector(selectAppLoading);
   const allTalents = useSelector(selectAllTalents);
   //   console.log("i am all tallents", allTalents);
@@ -26,21 +28,22 @@ export default function AddCampaign() {
 
   function submitForm(event) {
     event.preventDefault();
+    history.push("/campaigns");
 
     dispatch(
       addCampaign(title, description, contractLink, briefLink, date, talent)
     );
   }
 
-  console.log(
-    "i am form content",
-    title,
-    description,
-    contractLink,
-    briefLink,
-    date,
-    talent
-  );
+  //   console.log(
+  //     "i am form content",
+  //     title,
+  //     description,
+  //     contractLink,
+  //     briefLink,
+  //     date,
+  //     talent
+  //   );
   return (
     <Form as={Col} md={{ span: 6, offset: 3 }}>
       <h1 className="mt-5 mb-5">Add Campaign</h1>
@@ -62,6 +65,7 @@ export default function AddCampaign() {
           onChange={(event) => setDescription(event.target.value)}
           type="text"
           placeholder="Brief Description of what to do"
+          required
         />
       </Form.Group>
       <Form.Group>
@@ -71,6 +75,7 @@ export default function AddCampaign() {
           onChange={(event) => setContractLink(event.target.value)}
           type="text"
           placeholder="Contarct Link"
+          required
         />
       </Form.Group>
       <Form.Group>
@@ -80,6 +85,7 @@ export default function AddCampaign() {
           onChange={(event) => setBriefLink(event.target.value)}
           type="text"
           placeholder="Brief Link"
+          required
         />
       </Form.Group>
       <Form.Group>
@@ -88,6 +94,7 @@ export default function AddCampaign() {
           value={date}
           onChange={(event) => setDate(event.target.value)}
           type="date"
+          required
         />
       </Form.Group>
       <Form.Group>
@@ -97,6 +104,7 @@ export default function AddCampaign() {
             as="select"
             value={talent}
             onChange={(event) => setTalent(event.target.value)}
+            required
           >
             {allTalents.map((t) => {
               // console.log("i am t ", t);

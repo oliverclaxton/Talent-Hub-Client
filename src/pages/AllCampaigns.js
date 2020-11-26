@@ -10,7 +10,7 @@ const AllCampaigns = () => {
   const dispatch = useDispatch();
   //   const isLoading = useSelector(selectAppLoading);
   const allCampaigns = useSelector(selectAllCampaigns);
-  console.log("i am all campaigns", allCampaigns);
+  //   console.log("i am all campaigns", allCampaigns);
 
   useEffect(() => {
     dispatch(getAllCampaigns());
@@ -19,7 +19,7 @@ const AllCampaigns = () => {
     <div>
       <div>
         {allCampaigns.map((c) => {
-          console.log("i am campaings mapped", c);
+          //   console.log("i am campaings mapped", c);
           return (
             <div key={c.id}>
               <CampaignCard

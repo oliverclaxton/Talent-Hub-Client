@@ -11,6 +11,13 @@ export default (state = initialState, action) => {
       return { ...state, details: action.payload };
     case "ADD_CAMPAIGN_SUCCESS":
       return { ...state, all: [...state.all, action.payload] };
+    case "CAMPAIGN_DELETE_SUCCESS":
+      const campaignId = action.payload;
+      const newCampaigns = state.all.filter(
+        (campaign) => campaign.id !== campaignId
+      );
+
+      return { ...state, all: newCampaigns };
 
     default:
       return state;

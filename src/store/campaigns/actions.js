@@ -27,6 +27,12 @@ const addCampaignSuccess = (campaign) => {
     payload: campaign,
   };
 };
+const campaignDeleteSuccess = (campaignId) => {
+  return {
+    type: "CAMPAIGN_DELETE_SUCCESS",
+    payload: campaignId,
+  };
+};
 
 export const getAllCampaigns = () => {
   return async (dispatch, getState) => {
@@ -92,5 +98,30 @@ export const addCampaign = (
     );
     dispatch(addCampaignSuccess(response.data.campaign));
     dispatch(appDoneLoading());
+  };
+};
+
+export const deleteCampaign = (campaignId) => {
+  return async (dispatch, getState) => {
+    dispatch(appLoading());
+
+    // make an axios request to delete
+    // and console.log the response if success
+    try {
+      const response = await axios.delete(
+        `${apiUrl}/campaigns/${campaignId}`
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${token}`,
+        //   },
+        // }
+      );
+
+      console.log("campaign deleted?", response.data);
+      dispatch(campaignDeleteSuccess(campaignId));
+      dispatch(appDoneLoading());
+    } catch (e) {
+      console.error(e);
+    }
   };
 };

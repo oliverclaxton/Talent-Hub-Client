@@ -34,6 +34,7 @@ const SingleCampaign = () => {
           dueDate={singleCampaign.dueDate}
           statusId={singleCampaign.statusId}
           campaignImages={singleCampaign.campaignImages}
+          id={singleCampaign.id}
         />
       </div>
     </div>
