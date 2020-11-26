@@ -24,19 +24,17 @@ const SingleCampaign = () => {
 
   return (
     <div>
-      <div>
-        <SingleCampaignCard
-          title={singleCampaign.title}
-          description={singleCampaign.description}
-          briefLink={singleCampaign.briefLink}
-          contractLink={singleCampaign.contractLink}
-          talents={singleCampaign.users}
-          dueDate={singleCampaign.dueDate}
-          statusId={singleCampaign.statusId}
-          campaignImages={singleCampaign.campaignImages}
-          id={singleCampaign.id}
-        />
-      </div>
+      <SingleCampaignCard
+        title={singleCampaign.title}
+        description={singleCampaign.description}
+        briefLink={singleCampaign.briefLink}
+        contractLink={singleCampaign.contractLink}
+        talents={singleCampaign.users}
+        dueDate={singleCampaign.dueDate}
+        statusId={singleCampaign.statusId}
+        campaignImages={singleCampaign.campaignImages}
+        id={singleCampaign.id}
+      />
     </div>
   );
 };

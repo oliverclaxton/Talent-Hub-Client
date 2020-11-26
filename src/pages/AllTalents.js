@@ -1,14 +1,23 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import TalentCard from "../components/TalentCard";
 import { selectAllTalents } from "../store/talents/selectors";
 import { getAllTalents } from "../store/user/actions";
+import { selectToken } from "../store/user/selectors";
 
 const AllTalents = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   //   const isLoading = useSelector(selectAppLoading);
   const allTalents = useSelector(selectAllTalents);
   console.log("i am all tallents", allTalents);
+
+  const token = useSelector(selectToken);
+
+  if (!token) {
+    history.push("/");
+  }
 
   useEffect(() => {
     dispatch(getAllTalents());

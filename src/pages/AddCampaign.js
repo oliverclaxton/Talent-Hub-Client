@@ -7,6 +7,7 @@ import { selectAllTalents } from "../store/talents/selectors";
 import { getAllTalents } from "../store/talents/actions";
 import { addCampaign } from "../store/campaigns/actions";
 import { useHistory } from "react-router-dom";
+import { selectToken } from "../store/user/selectors";
 
 export default function AddCampaign() {
   const dispatch = useDispatch();
@@ -14,6 +15,12 @@ export default function AddCampaign() {
   //   const isLoading = useSelector(selectAppLoading);
   const allTalents = useSelector(selectAllTalents);
   //   console.log("i am all tallents", allTalents);
+
+  const token = useSelector(selectToken);
+
+  if (!token) {
+    history.push("/");
+  }
 
   useEffect(() => {
     dispatch(getAllTalents());

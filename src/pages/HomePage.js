@@ -22,7 +22,7 @@ const HomePage = () => {
         ) : userLoggedIn.isAdmin ? (
           <Link to="/talents">Let's get started</Link>
         ) : userLoggedIn.isTalent ? (
-          <Link to="/myCampaings">Let's get started</Link>
+          <Link to="/myCampaigns">Let's get started</Link>
         ) : null}
       </div>
     </div>

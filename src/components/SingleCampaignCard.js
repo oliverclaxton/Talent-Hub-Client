@@ -127,9 +127,7 @@ const SingleCampaignCard = (props) => {
           );
         })}
       </CardActions>
-      <Button variant="danger" onClick={() => onDelete(props.id)}>
-        Delete
-      </Button>
+      <Button onClick={() => onDelete(props.id)}>Delete</Button>
     </Card>
   );
 };

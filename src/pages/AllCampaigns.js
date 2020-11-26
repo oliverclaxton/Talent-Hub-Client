@@ -1,16 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CampaignCard from "../components/CampaignCard";
 import { getAllCampaigns } from "../store/campaigns/actions";
 import { selectAllCampaigns } from "../store/campaigns/selectors";
 import { Button } from "@material-ui/core";
+import { selectToken } from "../store/user/selectors";
 
 const AllCampaigns = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   //   const isLoading = useSelector(selectAppLoading);
   const allCampaigns = useSelector(selectAllCampaigns);
   //   console.log("i am all campaigns", allCampaigns);
+
+  const token = useSelector(selectToken);
+
+  if (!token) {
+    history.push("/");
+  }
 
   useEffect(() => {
     dispatch(getAllCampaigns());
