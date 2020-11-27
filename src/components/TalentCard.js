@@ -11,10 +11,19 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 1000,
+    display: "flex",
+    border: "solid",
+    justifyContent: "space-around",
+    alignItems: "space-around",
+    marginTop: 20,
+    marinBottom: 20,
+    marginLeft: 300,
   },
   media: {
-    height: 140,
+    height: 480,
+    width: 800,
+    justifyContent: "centre",
   },
   font: {
     fontFamily: "playfair display",
@@ -27,35 +36,35 @@ export default function TalentCard(props) {
   const fullName = `${props.firstName} ${props.lastName}`;
 
   return (
-    <Link className={classes.font} to={`/talents/${props.id}`}>
-      <Card className={classes.root}>
-        <CardActionArea>
+    <Card className={classes.root}>
+      <CardActionArea>
+        <Link className={classes.font} to={`/talents/${props.id}`}>
           <CardMedia className={classes.media} image={props.profileImageUrl} />
-          <CardContent>
-            <Typography
-              className={classes.font}
-              gutterBottom
-              variant="h5"
-              component="h2"
-            >
-              {fullName}
-            </Typography>
-            <Typography
-              className={classes.font}
-              variant="body2"
-              color="textSecondary"
-              component="p"
-            >
-              {props.email}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          {/* <Link className={classes.font} to={`/talents/${props.id}`}> */}
+        </Link>
+        <CardContent>
+          <Typography
+            className={classes.font}
+            gutterBottom
+            variant="h5"
+            component="h2"
+          >
+            {fullName}
+          </Typography>
+          <Typography
+            className={classes.font}
+            variant="body2"
+            color="textSecondary"
+            component="p"
+          >
+            {props.email}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Link className={classes.font} to={`/talents/${props.id}`}>
           Learn More
-          {/* </Link> */}
-        </CardActions>
-      </Card>
-    </Link>
+        </Link>
+      </CardActions>
+    </Card>
   );
 }

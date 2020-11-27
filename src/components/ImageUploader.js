@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "../store/user/selectors";
+import { addCampaignImage } from "../store/campaigns/actions";
 
-export default function ImageUploader() {
+export default function ImageUploader(props) {
+  console.log("i am props in new imageuploader", props);
+
+  const userLoggedIn = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  console.log("logged imn user", userLoggedIn.id);
+
+  const userId = userLoggedIn.id;
+  const campaignId = props.campaignId;
+
   const myCropWidget = async () => {
     const uploadWidget = window.cloudinary.createUploadWidget(
       {
@@ -14,8 +27,7 @@ export default function ImageUploader() {
         console.log(error, result);
 
         if (result.event === "success") {
-          //   uploadImageUrl(result.info.url);
-          console.log("result.event", result.info.url);
+          dispatch(addCampaignImage(result.info.url, userId, campaignId));
         }
       }
     );
