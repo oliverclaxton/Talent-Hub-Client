@@ -10,6 +10,7 @@ import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import "./AllTalents.css";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,6 +38,7 @@ const AllTalents = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const history = useHistory();
+  const [spacing, setSpacing] = React.useState(2);
   //   const isLoading = useSelector(selectAppLoading);
   const allTalents = useSelector(selectAllTalents);
   console.log("i am all tallents", allTalents);
@@ -57,42 +59,44 @@ const AllTalents = () => {
         <div>
           <h1>Talents!</h1>
         </div>
-        <div className={classes.root}>
-          <GridList className={classes.gridList} cols={2.5}>
-            <GridList cellHeight={160} className={classes.gridList} cols={3}>
-              {allTalents.map((t) => (
-                <GridListTile key={t.id}>
-                  <TalentCard
-                    className="card"
-                    firstName={t.firstName}
-                    lastName={t.lastName}
-                    email={t.email}
-                    profileImageUrl={t.profileImageUrl}
-                    id={t.id}
-                  />
-                </GridListTile>
-              ))}
-            </GridList>
-          </GridList>
+        <div>
+          <Grid
+            container
+            direction="row"
+            justify="space-evenly"
+            alignItems="center"
+            item
+            xs={12}
+          >
+            <Grid>
+              <Grid>
+                <div className={classes.root}>
+                  <GridList className={classes.gridList} cols={2.5}>
+                    <GridList
+                      cellHeight={160}
+                      className={classes.gridList}
+                      cols={3}
+                    >
+                      {allTalents.map((t) => (
+                        <GridListTile key={t.id}>
+                          <TalentCard
+                            className="card"
+                            firstName={t.firstName}
+                            lastName={t.lastName}
+                            email={t.email}
+                            profileImageUrl={t.profileImageUrl}
+                            id={t.id}
+                          />
+                        </GridListTile>
+                      ))}
+                    </GridList>
+                  </GridList>
+                </div>
+              </Grid>
+            </Grid>
+          </Grid>
         </div>
       </div>
-      {/* <div>
-        {allTalents.map((t) => {
-          console.log("i am at");
-          return (
-            <div key={t.id}>
-              <TalentCard
-                className="card"
-                firstName={t.firstName}
-                lastName={t.lastName}
-                email={t.email}
-                profileImageUrl={t.profileImageUrl}
-                id={t.id}
-              />
-            </div>
-          );
-        })}
-      </div> */}
     </div>
   );
 };
