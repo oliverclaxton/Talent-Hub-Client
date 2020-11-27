@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser } from "../store/user/selectors";
-import { addCampaignImage } from "../store/campaigns/actions";
+import { selectUser } from "../../store/user/selectors";
+import { addCampaignImage } from "../../store/campaigns/actions";
 import { Button } from "@material-ui/core";
 
 export default function ImageUploader(props) {

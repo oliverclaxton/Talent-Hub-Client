@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getSingleTalent } from "../store/talents/actions";
-import { selectSingleTalent } from "../store/talents/selectors";
-import SingleTalentCard from "../components/SingleTalentCard";
+import { getSingleTalent } from "../../store/talents/actions";
+import { selectSingleTalent } from "../../store/talents/selectors";
+import SingleTalentCard from "../../components/SingleTalentCard/SingleTalentCard";
 
 const SinlgeTalent = () => {
   const params = useParams();

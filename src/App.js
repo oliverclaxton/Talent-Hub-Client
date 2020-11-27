@@ -2,24 +2,23 @@ import React, { useEffect } from "react";
 import "./App.css";
 
 import { Switch, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "../src/components/Navbar/Navbar";
 // import Loading from "./components/Loading";
 // import MessageBox from "./components/MessageBox";
 
 import { useDispatch } from "react-redux";
 // import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
-import HomePage from "./pages/HomePage";
-import AllTalents from "./pages/AllTalents";
-import SinlgeTalent from "./pages/SinlgeTalent";
-import AllCampaigns from "./pages/AllCampaigns";
-import SingleCampaign from "./pages/SingleCampaign";
-import AddCampaign from "./pages/AddCampaign";
-import MyCampaigns from "./pages/MyCampaigns";
-import MySingleCampaignCard from "./components/MySingleCampaignCard";
-import MySingleCampaign from "./pages/MySingleCampaign";
+import Login from "./pages/Login/Login";
+import SignUp from "./pages/SignUp/SignUp";
+import HomePage from "./pages/HomePage/HomePage";
+import AllTalents from "./pages/AllTallents/AllTalents";
+import SinlgeTalent from "./pages/SinlgeTalent/SinlgeTalent";
+import AllCampaigns from "./pages/AllCampaigns/AllCampaigns";
+import SingleCampaign from "./pages/SingleCampaign/SingleCampaign";
+import AddCampaign from "./pages/AddCampaign/AddCampaign";
+import MyCampaigns from "./pages/MyCampaign/MyCampaigns";
+import MySingleCampaign from "./pages/MySingleCampaign/MySingleCampaign";
 
 function App() {
   const dispatch = useDispatch();

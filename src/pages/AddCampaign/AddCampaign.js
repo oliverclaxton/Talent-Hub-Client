@@ -3,11 +3,11 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { selectAllTalents } from "../store/talents/selectors";
-import { getAllTalents } from "../store/talents/actions";
-import { addCampaign } from "../store/campaigns/actions";
+import { selectAllTalents } from "../../store/talents/selectors";
+import { getAllTalents } from "../../store/talents/actions";
+import { addCampaign } from "../../store/campaigns/actions";
 import { useHistory } from "react-router-dom";
-import { selectToken } from "../store/user/selectors";
+import { selectToken } from "../../store/user/selectors";
 
 export default function AddCampaign() {
   const dispatch = useDispatch();
