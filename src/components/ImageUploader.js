@@ -21,6 +21,7 @@ export default function ImageUploader(props) {
         cloudName: "drzludyk5",
         uploadPreset: "rvercepq",
         cropping: true,
+        croppingAspectRatio: 16 / 9,
       },
 
       (error, result) => {

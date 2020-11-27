@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+}
+
+.position__border {
+  border: solid red 1px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+}
+img {
+  max-width: 400px;
+  max-height: 200px;
+}
