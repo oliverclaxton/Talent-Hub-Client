@@ -30,51 +30,26 @@ const CampaignCard = (props) => {
   }
 
   return (
-    <div className="container">
-      {/* <Link className={classes.font} to={`/campaigns/${props.id}`}>
+    <div className="main">
+      <Link className={classes.font} to={`/campaigns/${props.id}`}>
         <Card className={classes.root}>
-          <CardActionArea>
-            <CardContent>
-              <Typography
-                className={classes.font}
-                gutterBottom
-                variant="h5"
-                component="h2"
-              >
-                {props.title}
-              </Typography>
-              <Typography
-                className={classes.font}
-                variant="body2"
-                color="textSecondary"
-                component="p"
-              >
-                {props.description}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
+          <CardContent>
+            <Typography className={classes.font} variant="h5" component="h1">
+              {props.title}
+            </Typography>
+            <Typography
+              className={(classes.title, classes.font)}
+              color="textSecondary"
+              gutterBottom
+            >
+              {props.description}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small">See Campaing Deatials </Button>
+          </CardActions>
         </Card>
-      </Link> */}
-
-      <Card className={classes.root}>
-        <CardContent>
-          <Typography className={classes.font} variant="h5" component="h1">
-            {props.title}
-          </Typography>
-          <Typography
-            className={(classes.title, classes.font)}
-            color="textSecondary"
-            gutterBottom
-          >
-            {props.description}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Link className={classes.font} to={`/campaigns/${props.id}`}>
-            <Button size="small">Learn More</Button>
-          </Link>
-        </CardActions>
-      </Card>
+      </Link>
     </div>
   );
 };

@@ -48,7 +48,7 @@ const Navbar = () => {
     <nav className="nav__main">
       <div className="navbar__left">
         <Link to="/" className="navbar__left__item1">
-          Home
+          <Button>Home</Button>
         </Link>
       </div>
       <div className="navbar__middle">
@@ -57,11 +57,11 @@ const Navbar = () => {
 
       <div className="navbar__right">
         <Link to="/login" className="navbar__left__item1">
-          Login
+          <Button>Login</Button>
         </Link>
         <span> | </span>
         <Link to="/signup" className="navbar__left__item1">
-          Sign Up
+          <Button> Sign Up</Button>
         </Link>
         {/* {avatar(userLoggedIn.profileImageUrl)} */}
         <Avatar className="navbar__left__item1" alt="user" src="" />
@@ -71,15 +71,15 @@ const Navbar = () => {
     <nav className="nav__main">
       <div className="navbar__left">
         <Link to="/" className="navbar__left__item1">
-          Home
+          <Button>Home</Button>
         </Link>
         <span> | </span>
         <Link to="/talents" className="navbar__left__item2">
-          Talents
+          <Button>Talents</Button>
         </Link>
         <span> | </span>
         <Link to="/campaigns" className="navbar__left__item2">
-          Campaigns
+          <Button>Campaigns</Button>
         </Link>
       </div>
       <div className="navbar__middle">
@@ -113,11 +113,11 @@ const Navbar = () => {
     <nav className="nav__main">
       <div className="navbar__left">
         <Link to="/" className="navbar__left__item1">
-          Home
+          <Button>Home</Button>
         </Link>
         <span> | </span>
         <Link to="/myCampaigns" className="navbar__left__item2">
-          My Campaigns
+          <Button>My Campaigns</Button>
         </Link>
       </div>
       <div className="navbar__middle">

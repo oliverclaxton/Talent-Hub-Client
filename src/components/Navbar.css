@@ -8,7 +8,7 @@
 }
 
 .navbar__left {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   padding: 20px 30px;
@@ -17,14 +17,14 @@
 }
 
 .navbar__middle {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: space-around;
   padding: 20px 30px;
   align-items: center;
 }
 .navbar__right {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   padding: 20px 30px;
   align-items: center;
