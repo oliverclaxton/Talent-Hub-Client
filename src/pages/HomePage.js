@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -18,11 +19,19 @@ const HomePage = () => {
       </div>
       <div className="main__message">
         {!token ? (
-          <Link to="/login">Let's get started</Link>
+          <Link to="/login">
+            {" "}
+            <Button> Let's get started</Button>
+          </Link>
         ) : userLoggedIn.isAdmin ? (
-          <Link to="/talents">Let's get started</Link>
+          <Link to="/talents">
+            {" "}
+            <Button> Let's get started</Button>
+          </Link>
         ) : userLoggedIn.isTalent ? (
-          <Link to="/myCampaigns">Let's get started</Link>
+          <Link to="/myCampaigns">
+            <Button> Let's get started</Button>
+          </Link>
         ) : null}
       </div>
     </div>
