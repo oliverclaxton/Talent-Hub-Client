@@ -6,7 +6,8 @@ import { signUp } from "../store/user/actions";
 import { selectToken } from "../store/user/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
-import { Col } from "react-bootstrap";
+import { Col, Image } from "react-bootstrap";
+import SignUpImageUploader from "../components/SignUpImageUploader";
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -17,6 +18,12 @@ export default function SignUp() {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const history = useHistory();
+
+  const setImage = (image) => {
+    console.log("image is ", image);
+
+    setProfileImageUrl(image);
+  };
 
   useEffect(() => {
     if (token !== null) {
@@ -85,14 +92,25 @@ export default function SignUp() {
           />
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Profile Image Url</Form.Label>
-          <Form.Control
+          <Form.Label>Profile Image {"->"} </Form.Label>
+          {/* <Form.Control
             value={profileImageUrl}
             onChange={(event) => setProfileImageUrl(event.target.value)}
             type="text"
             placeholder="Profile Image Url"
-          />
+          /> */}
+          <SignUpImageUploader setImage={setImage} />
         </Form.Group>
+        <Form.Group>
+          <Form.Label>Profile Image Preview</Form.Label>
+
+          {profileImageUrl ? (
+            <Col className="mt-4" md={{ span: 8, offset: 2 }}>
+              <Image src={profileImageUrl} />
+            </Col>
+          ) : null}
+        </Form.Group>
+
         <Form.Group className="mt-5">
           <Button variant="primary" type="submit" onClick={submitForm}>
             Sign up
