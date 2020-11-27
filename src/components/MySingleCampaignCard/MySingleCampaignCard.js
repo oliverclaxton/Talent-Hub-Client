@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { useDispatch } from "react-redux";
-import { addImageCaption } from "../store/campaigns/actions";
+import { addImageCaption } from "../../store/campaigns/actions";
 import Form from "react-bootstrap/Form";
 import { Col } from "react-bootstrap";
-import ImageUploader from "./ImageUploader";
+import ImageUploader from "../ImageUploaders/ImageUploader";
 
 const MySingleCampaignCard = (props) => {
   const dispatch = useDispatch();

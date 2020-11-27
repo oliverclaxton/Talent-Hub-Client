@@ -1,11 +1,11 @@
 import { Link, useHistory } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import CampaignCard from "../components/CampaignCard";
-import { getAllCampaigns } from "../store/campaigns/actions";
-import { selectAllCampaigns } from "../store/campaigns/selectors";
+import CampaignCard from "../../components/CampaignCard/CampaignCard";
+import { getAllCampaigns } from "../../store/campaigns/actions";
+import { selectAllCampaigns } from "../../store/campaigns/selectors";
 import { Button } from "@material-ui/core";
-import { selectToken } from "../store/user/selectors";
+import { selectToken } from "../../store/user/selectors";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";

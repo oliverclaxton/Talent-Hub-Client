@@ -1,15 +1,14 @@
 import { Link, useHistory } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import CampaignCard from "../components/CampaignCard";
-import { getAllCampaigns } from "../store/campaigns/actions";
-import { selectAllCampaigns } from "../store/campaigns/selectors";
+import CampaignCard from "../../components/CampaignCard/CampaignCard";
+import { getAllCampaigns } from "../../store/campaigns/actions";
+import { selectAllCampaigns } from "../../store/campaigns/selectors";
 import { Button } from "@material-ui/core";
-import { selectToken, selectUser } from "../store/user/selectors";
-import { selectSingleTalent } from "../store/talents/selectors";
-import { getSingleTalent } from "../store/talents/actions";
-import MyCampaignCard from "../components/MyCampaignCard";
-import MySingleCampaignCard from "../components/MySingleCampaignCard";
+import { selectToken, selectUser } from "../../store/user/selectors";
+import { selectSingleTalent } from "../../store/talents/selectors";
+import { getSingleTalent } from "../../store/talents/actions";
+import MyCampaignCard from "../../components/MyCampaignCard/MyCampaignCard";
 
 const MyCampaigns = () => {
   const dispatch = useDispatch();

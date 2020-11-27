@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectToken, selectUser } from "../store/user/selectors";
+import { selectToken, selectUser } from "../../store/user/selectors";
 import { Link, useHistory } from "react-router-dom";
 import { Avatar, Button } from "@material-ui/core";
-import { getUserWithStoredToken, logOut } from "../store/user/actions";
+import { logOut } from "../../store/user/actions";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({

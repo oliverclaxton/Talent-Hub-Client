@@ -3,10 +3,9 @@ import React, { useState } from "react";
 
 export default function SignUpImageUploader(props) {
   console.log("what are pros???", props);
-  const [imageurl, setImageurl] = useState("");
 
   const setImageHandler = (url) => {
-    console.log("i am urtl", url);
+    // console.log("i am urtl", url);
     props.setImage(url);
   };
 

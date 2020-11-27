@@ -2,7 +2,7 @@ import { Button } from "@material-ui/core";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectToken, selectUser } from "../store/user/selectors";
+import { selectToken, selectUser } from "../../store/user/selectors";
 import "./HomePage.css";
 
 const HomePage = () => {

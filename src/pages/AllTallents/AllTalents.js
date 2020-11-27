@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import TalentCard from "../components/TalentCard";
-import { selectAllTalents } from "../store/talents/selectors";
-import { getAllTalents } from "../store/user/actions";
-import { selectToken } from "../store/user/selectors";
+import TalentCard from "../../components/TalentCard/TalentCard";
+import { selectAllTalents } from "../../store/talents/selectors";
+import { getAllTalents } from "../../store/user/actions";
+import { selectToken } from "../../store/user/selectors";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";

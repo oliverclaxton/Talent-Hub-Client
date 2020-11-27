@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getSingleTalent } from "../store/talents/actions";
-import SingleCampaignCard from "../components/SingleCampaignCard";
-import { selectSingleCampaign } from "../store/campaigns/selectors";
-import { getSingleCampaign } from "../store/campaigns/actions";
+import { getSingleTalent } from "../../store/talents/actions";
+import SingleCampaignCard from "../../components/SingleCampaignCard/SingleCampaignCard";
+import { selectSingleCampaign } from "../../store/campaigns/selectors";
+import { getSingleCampaign } from "../../store/campaigns/actions";
 
 const SingleCampaign = () => {
   const params = useParams();
