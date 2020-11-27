@@ -153,3 +153,23 @@ export const addCampaignImage = (imgUrl, userId, campaignId) => {
     // dispatch(appDoneLoading());
   };
 };
+
+export const addImageCaption = (caption, id, campaignId) => {
+  console.log(" i am campaignId ", caption, id, campaignId);
+  return async (dispatch, getState) => {
+    dispatch(appLoading());
+
+    const response = await axios.patch(`${apiUrl}/campaigns/images`, {
+      caption,
+      id,
+    });
+
+    console.log("Yep!", response.data.campaign);
+    dispatch(
+      showMessageWithTimeout("success", false, response.data.message, 3000)
+    );
+    dispatch(getSingleCampaign(campaignId));
+    // dispatch(addCampaignSuccess(response.data.campaign));
+    // dispatch(appDoneLoading());
+  };
+};

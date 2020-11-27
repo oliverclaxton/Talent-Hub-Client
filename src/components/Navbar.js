@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken, selectUser } from "../store/user/selectors";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Avatar, Button } from "@material-ui/core";
 import { getUserWithStoredToken, logOut } from "../store/user/actions";
 import { makeStyles } from "@material-ui/core/styles";
@@ -29,6 +29,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const userLoggedIn = useSelector(selectUser);
+  const history = useHistory();
   // console.log("i am token", token);
   // console.log("i am user logged in imageurl", userLoggedIn.profileImageUrl);
 
@@ -90,7 +91,10 @@ const Navbar = () => {
           {userLoggedIn.firstName} {userLoggedIn.lastName} |
         </span>
         <Button
-          onClick={() => dispatch(logOut())}
+          onClick={() => {
+            history.push("/login");
+            dispatch(logOut());
+          }}
           to="/signup"
           className="navbar__left__item1"
         >
@@ -125,7 +129,10 @@ const Navbar = () => {
           {userLoggedIn.firstName} {userLoggedIn.lastName} |
         </span>
         <Button
-          onClick={() => dispatch(logOut())}
+          onClick={() => {
+            history.push("/login");
+            dispatch(logOut());
+          }}
           to="/signup"
           className="navbar__left__item1"
         >
