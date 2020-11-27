@@ -93,12 +93,6 @@ export default function SignUp() {
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Profile Image {"->"} </Form.Label>
-          {/* <Form.Control
-            value={profileImageUrl}
-            onChange={(event) => setProfileImageUrl(event.target.value)}
-            type="text"
-            placeholder="Profile Image Url"
-          /> */}
           <SignUpImageUploader setImage={setImage} />
         </Form.Group>
         <Form.Group>
