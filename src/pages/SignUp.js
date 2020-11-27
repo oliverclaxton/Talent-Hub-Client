@@ -96,12 +96,13 @@ export default function SignUp() {
           <SignUpImageUploader setImage={setImage} />
         </Form.Group>
         <Form.Group>
-          <Form.Label>Profile Image Preview</Form.Label>
-
           {profileImageUrl ? (
-            <Col className="mt-4" md={{ span: 8, offset: 2 }}>
-              <Image src={profileImageUrl} />
-            </Col>
+            <div>
+              <Form.Label>Profile Image Preview</Form.Label>
+              <Col className="mt-4" md={{ span: 8, offset: 2 }}>
+                <Image src={profileImageUrl} />
+              </Col>
+            </div>
           ) : null}
         </Form.Group>
 
