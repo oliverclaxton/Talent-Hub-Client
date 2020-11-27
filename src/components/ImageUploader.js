@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../store/user/selectors";
 import { addCampaignImage } from "../store/campaigns/actions";
+import { Button } from "@material-ui/core";
 
 export default function ImageUploader(props) {
   console.log("i am props in new imageuploader", props);
@@ -37,7 +38,7 @@ export default function ImageUploader(props) {
 
   return (
     <div>
-      <Button variant="" onClick={myCropWidget}>
+      <Button variant="contained" onClick={myCropWidget}>
         Upload picture
       </Button>
     </div>

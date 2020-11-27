@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
 import { signUp } from "../store/user/actions";
 import { selectToken } from "../store/user/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import { Col, Image } from "react-bootstrap";
 import SignUpImageUploader from "../components/SignUpImageUploader";
+import { Button } from "@material-ui/core";
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -46,7 +46,7 @@ export default function SignUp() {
   return (
     <Container>
       <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
-        <h1 className="mt-5 mb-5">Signup</h1>
+        <h2 className="mt-5 mb-5">Sign Up</h2>
         <Form.Group controlId="formBasicName">
           <Form.Label>First name</Form.Label>
           <Form.Control
@@ -92,7 +92,6 @@ export default function SignUp() {
           />
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Profile Image {"->"} </Form.Label>
           <SignUpImageUploader setImage={setImage} />
         </Form.Group>
         <Form.Group>
@@ -105,13 +104,15 @@ export default function SignUp() {
             </div>
           ) : null}
         </Form.Group>
-
         <Form.Group className="mt-5">
-          <Button variant="primary" type="submit" onClick={submitForm}>
+          <Button variant="contained" type="submit" onClick={submitForm}>
             Sign up
           </Button>
         </Form.Group>
-        <Link to="/login">Click here to log in</Link>
+
+        <Link to="/login">
+          <Button> Click here to Login</Button>
+        </Link>
       </Form>
     </Container>
   );

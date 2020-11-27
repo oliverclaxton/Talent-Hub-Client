@@ -12,9 +12,10 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
+    display: "flex",
   },
   media: {
-    height: 140,
+    height: 300,
   },
   font: {
     fontFamily: "playfair display",

@@ -1,8 +1,5 @@
+import { Button } from "@material-ui/core";
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { selectUser } from "../store/user/selectors";
-import { addCampaignImage } from "../store/campaigns/actions";
 
 export default function SignUpImageUploader(props) {
   console.log("what are pros???", props);
@@ -34,8 +31,8 @@ export default function SignUpImageUploader(props) {
   };
 
   return (
-    <Button variant="contained" type="submit" onClick={myCropWidget}>
-      Upload picture
+    <Button variant="contained" onClick={myCropWidget}>
+      Upload Profile Photo
     </Button>
   );
 }
