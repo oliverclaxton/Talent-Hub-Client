@@ -28,27 +28,6 @@ const SingleCampaignCard = (props) => {
 
   const [statusColor, setStatusColor] = useState("green");
 
-  //   switch (props.statusId) {
-  //     case 1:
-  //       return setStatusColor("green");
-  //       break;
-  //     case 2:
-  //       return setStatusColor("orange");
-  //       break;
-
-  //     default:
-  //       setStatusColor("red");
-  //       break;
-  //   }
-
-  //   if (props.statusId === 1) {
-  //     setStatusColor("green");
-  //   } else if (props.statusId === 2) {
-  //     setStatusColor("orange");
-  //   } else {
-  //     setStatusColor("red");
-  //   }
-
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -65,70 +44,40 @@ const SingleCampaignCard = (props) => {
   }
 
   return (
-    // <div>h1</div>
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardContent>
-          <Typography
-            className={classes.font}
-            gutterBottom
-            variant="h5"
-            component="h2"
-          >
-            {props.title}
-          </Typography>
-          <Typography
-            className={classes.font}
-            variant="body2"
-            color="textSecondary"
-            component="p"
-          >
-            Description: {props.description}
-          </Typography>
-          <Typography
-            className={classes.font}
-            variant="body2"
-            color="textSecondary"
-            component="p"
-          >
-            date to go live: {props.dueDate}
-          </Typography>
-          <Typography
-            className={classes.font}
-            variant="body2"
-            color="textSecondary"
-            component="p"
-          >
-            Status: {statusColor}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <h5>List of talents on this campaign are : </h5>
-        {props.talents.map((t) => {
-          console.log("i am uuuu", t);
-          return (
-            <div key={t.id}>
-              <Link className={classes.font} to={`/talents/${t.id}`}>
-                {t.firstName} {t.lastName}
-              </Link>
-            </div>
-          );
-        })}
-      </CardActions>
-      <CardActions>
-        {props.campaignImages.map((ci) => {
-          console.log("i am CICIC", ci);
-          return (
-            <div key={ci.id}>
-              <CardMedia className={classes.media} image={ci.imageUrl} />
-              <p>{ci.caption}</p>
-            </div>
-          );
-        })}
-      </CardActions>
-      <Button onClick={() => onDelete(props.id)}>Delete</Button>
-    </Card>
+    <div>
+      <div>
+        <div>
+          <h1>{props.title}</h1>
+          <h5>{props.description}</h5>
+          <h6>Date to go live: {props.dueDate}</h6>
+        </div>
+        <div>
+          <h5>List of talents on this campaign are : </h5>
+          {props.talents.map((t) => {
+            console.log("i am uuuu", t);
+            return (
+              <div key={t.id}>
+                <Link className={classes.font} to={`/talents/${t.id}`}>
+                  {t.firstName} {t.lastName}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+        <div>
+          {props.campaignImages.map((ci) => {
+            //   console.log("i am CICIC", ci);
+            return (
+              <div key={ci.id}>
+                {/* <p>image number : {ci.id}</p> */}
+                <img src={ci.imageUrl} alt="image" />
+                <p>Caption: {ci.caption}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
   );
 };
 
