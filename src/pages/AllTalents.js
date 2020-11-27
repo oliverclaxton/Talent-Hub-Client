@@ -5,6 +5,7 @@ import TalentCard from "../components/TalentCard";
 import { selectAllTalents } from "../store/talents/selectors";
 import { getAllTalents } from "../store/user/actions";
 import { selectToken } from "../store/user/selectors";
+import "./AllTalents.css";
 
 const AllTalents = () => {
   const dispatch = useDispatch();
@@ -24,13 +25,14 @@ const AllTalents = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="card">
       <div>
         {allTalents.map((t) => {
           console.log("i am at");
           return (
             <div key={t.id}>
               <TalentCard
+                className="card"
                 firstName={t.firstName}
                 lastName={t.lastName}
                 email={t.email}

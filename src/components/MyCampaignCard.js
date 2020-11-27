@@ -21,28 +21,18 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SingleTalentCard(props) {
-  console.log(" i am props,", props.campaigns);
+const MyCampaignCard = (props) => {
   const classes = useStyles();
 
-  if (!props.campaigns) {
-    return <h1>Loading</h1>;
-  }
-  props.campaigns.map((c) => {
-    console.log("i am c", c);
-  });
-  const fullName = `${props.firstName} ${props.lastName}`;
-  const noCampaingsMessage = (
-    <div>
-      <p>No current Campigns</p>
-    </div>
-  );
+  console.log("i am props", props);
+  //   if (!props) {
+  //     return <h1>Loading</h1>;
+  //   }
 
   return (
-    <div>
+    <Link className={classes.font} to={`/myCampaigns/${props.id}`}>
       <Card className={classes.root}>
         <CardActionArea>
-          <CardMedia className={classes.media} image={props.profileImageUrl} />
           <CardContent>
             <Typography
               className={classes.font}
@@ -50,7 +40,7 @@ export default function SingleTalentCard(props) {
               variant="h5"
               component="h2"
             >
-              {fullName}
+              {props.title}
             </Typography>
             <Typography
               className={classes.font}
@@ -58,26 +48,13 @@ export default function SingleTalentCard(props) {
               color="textSecondary"
               component="p"
             >
-              {props.email}
+              {props.description}
             </Typography>
           </CardContent>
         </CardActionArea>
       </Card>
-      <h1>Current campaigns</h1>
-      {props.campaigns.length === 0
-        ? noCampaingsMessage
-        : props.campaigns.map((c) => {
-            return (
-              <ul key={c.id}>
-                <Link className={classes.font} to={`/campaigns/${c.id}`}>
-                  <li>{c.title}</li>
-                </Link>
-              </ul>
-            );
-          })}
-      <Link to={"/addCampaign"}>
-        <Button variant="contained">Add Campaign</Button>
-      </Link>
-    </div>
+    </Link>
   );
-}
+};
+
+export default MyCampaignCard;

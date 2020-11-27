@@ -27,6 +27,14 @@ const addCampaignSuccess = (campaign) => {
     payload: campaign,
   };
 };
+
+// const addCampaignImageSuccess = (campaignImage) => {
+//   return {
+//     type: "ADD_CAMPAIGN_SUCCESS",
+//     payload: campaignImage,
+//   };
+// };
+
 const campaignDeleteSuccess = (campaignId) => {
   return {
     type: "CAMPAIGN_DELETE_SUCCESS",
@@ -123,5 +131,25 @@ export const deleteCampaign = (campaignId) => {
     } catch (e) {
       console.error(e);
     }
+  };
+};
+
+export const addCampaignImage = (imgUrl, userId, campaignId) => {
+  return async (dispatch, getState) => {
+    dispatch(appLoading());
+
+    const response = await axios.post(`${apiUrl}/campaigns/images`, {
+      imgUrl,
+      userId,
+      campaignId,
+    });
+
+    console.log("Yep!", response.data.campaign);
+    dispatch(
+      showMessageWithTimeout("success", false, response.data.message, 3000)
+    );
+    dispatch(getSingleCampaign(campaignId));
+    // dispatch(addCampaignSuccess(response.data.campaign));
+    // dispatch(appDoneLoading());
   };
 };
