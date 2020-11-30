@@ -10,7 +10,9 @@ import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import "./AllTalents.css";
-import { Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
+import { Col } from "react-bootstrap";
+import "./AllTalents.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,45 +58,18 @@ const AllTalents = () => {
   return (
     <div>
       <div>
-        <div>
-          <h1>Talents!</h1>
-        </div>
-        <div>
-          <Grid
-            container
-            direction="row"
-            justify="space-evenly"
-            alignItems="center"
-            item
-            xs={12}
-          >
-            <Grid>
-              <Grid>
-                <div className={classes.root}>
-                  <GridList className={classes.gridList} cols={2.5}>
-                    <GridList
-                      cellHeight={160}
-                      className={classes.gridList}
-                      cols={3}
-                    >
-                      {allTalents.map((t) => (
-                        <GridListTile key={t.id}>
-                          <TalentCard
-                            className="card"
-                            firstName={t.firstName}
-                            lastName={t.lastName}
-                            email={t.email}
-                            profileImageUrl={t.profileImageUrl}
-                            id={t.id}
-                          />
-                        </GridListTile>
-                      ))}
-                    </GridList>
-                  </GridList>
-                </div>
-              </Grid>
-            </Grid>
-          </Grid>
+        <div className="talent__card">
+          {allTalents.map((t) => (
+            <TalentCard
+              key={t.id}
+              className="card"
+              firstName={t.firstName}
+              lastName={t.lastName}
+              email={t.email}
+              profileImageUrl={t.profileImageUrl}
+              id={t.id}
+            />
+          ))}
         </div>
       </div>
     </div>
