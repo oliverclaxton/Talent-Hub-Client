@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import { Button } from "@material-ui/core";
-import "./CampaignCard.css";
 
 const CampaignCard = (props) => {
   // console.log("i am props", props);

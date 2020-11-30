@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
-import "./SingleTalentCard.css";
+import { Card, CardColumns } from "react-bootstrap";
+import "../../index.css";
 
 export default function SingleTalentCard(props) {
   // console.log(" i am props,", props);
@@ -20,8 +20,8 @@ export default function SingleTalentCard(props) {
 
   return (
     <div>
-      <div className="single__talent">
-        <Card className="single__talent">
+      <CardColumns>
+        <Card>
           <Card.Img variant="top" src={props.profileImageUrl} />
           <Card.Body>
             <Card.Title>
@@ -30,7 +30,7 @@ export default function SingleTalentCard(props) {
             <Card.Text>{props.email}</Card.Text>
           </Card.Body>
         </Card>
-      </div>
+      </CardColumns>
 
       <div className="info">
         <h1>Current campaigns</h1>

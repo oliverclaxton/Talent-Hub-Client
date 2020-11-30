@@ -5,8 +5,7 @@ import { addImageCaption } from "../../store/campaigns/actions";
 import Form from "react-bootstrap/Form";
 import { Card, Col, CardColumns } from "react-bootstrap";
 import ImageUploader from "../ImageUploaders/ImageUploader";
-
-import "./MySingleCampaignCard.css";
+import "../../index.css";
 
 const MySingleCampaignCard = (props) => {
   const dispatch = useDispatch();
@@ -43,10 +42,10 @@ const MySingleCampaignCard = (props) => {
             <Card key={ci.id}>
               <Card.Img src={ci.imageUrl} />
               <Card.Body>
-                <Card.Title> Caption: {ci.caption}</Card.Title>
+                <Card.Title>Caption</Card.Title>
+                <Card.Text>{ci.caption}</Card.Text>
                 {!ci.caption ? (
                   <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
-                    <h1 className="mt-5 mb-5"></h1>
                     <Form.Group>
                       <Form.Control
                         onChange={(event) => setCaption(event.target.value)}
