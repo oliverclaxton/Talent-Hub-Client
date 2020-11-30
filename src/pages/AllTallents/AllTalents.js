@@ -6,9 +6,8 @@ import { selectAllTalents } from "../../store/talents/selectors";
 import { getAllTalents } from "../../store/user/actions";
 import { selectToken } from "../../store/user/selectors";
 import { makeStyles } from "@material-ui/core/styles";
-import "./AllTalents.css";
-// import { CardDeck } from "react-bootstrap";
-import { Card, CardColumns } from "react-bootstrap";
+
+import { CardColumns } from "react-bootstrap";
 
 const AllTalents = () => {
   const dispatch = useDispatch();

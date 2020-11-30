@@ -9,6 +9,7 @@ import { selectToken, selectUser } from "../../store/user/selectors";
 import { selectSingleTalent } from "../../store/talents/selectors";
 import { getSingleTalent } from "../../store/talents/actions";
 import MyCampaignCard from "../../components/MyCampaignCard/MyCampaignCard";
+import { CardColumns } from "react-bootstrap";
 
 const MyCampaigns = () => {
   const dispatch = useDispatch();
@@ -33,23 +34,21 @@ const MyCampaigns = () => {
   if (!myCampaigns.campaigns) return <h1>loading</h1>;
 
   return (
-    <div>
-      <div>
-        {myCampaigns.campaigns.map((c) => {
-          // console.log("i am mycampaings mapped", c);
-          return (
-            <div className="all__talents">
-              <MyCampaignCard
-                key={c.id}
-                title={c.title}
-                description={c.description}
-                id={c.id}
-              />
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <CardColumns>
+      {myCampaigns.campaigns.map((c) => {
+        // console.log("i am mycampaings mapped", c);
+        return (
+          <div className="all__talents">
+            <MyCampaignCard
+              key={c.id}
+              title={c.title}
+              description={c.description}
+              id={c.id}
+            />
+          </div>
+        );
+      })}
+    </CardColumns>
   );
 };
 

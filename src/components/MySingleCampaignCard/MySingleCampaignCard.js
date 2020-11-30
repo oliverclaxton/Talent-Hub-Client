@@ -42,10 +42,14 @@ const MySingleCampaignCard = (props) => {
             <Card key={ci.id}>
               <Card.Img src={ci.imageUrl} />
               <Card.Body>
-                <Card.Title>Caption</Card.Title>
-                <Card.Text>{ci.caption}</Card.Text>
+                <Card.Title>
+                  <h3>Caption</h3>
+                </Card.Title>
+                <Card.Text>
+                  <p>{ci.caption}</p>
+                </Card.Text>
                 {!ci.caption ? (
-                  <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
+                  <Form as={Col}>
                     <Form.Group>
                       <Form.Control
                         onChange={(event) => setCaption(event.target.value)}

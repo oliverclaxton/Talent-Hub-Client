@@ -6,10 +6,9 @@ import {
   deleteCampaign,
   getSingleCampaign,
 } from "../../store/campaigns/actions";
-import { Card } from "react-bootstrap";
+import { Card, CardColumns } from "react-bootstrap";
 import { Button } from "@material-ui/core";
-import "./SingleCampaign.css";
-import "../../App.css";
+import "../../index.css";
 
 const SingleCampaign = () => {
   const params = useParams();
@@ -51,7 +50,7 @@ const SingleCampaign = () => {
           {singleCampaign.dueDate}
         </h6>
       </div>
-      <div className="campaign__card">
+      <CardColumns>
         {singleCampaign.campaignImages.map((ci) => (
           <Card className="talent__card">
             <Card.Img src={ci.imageUrl} />
@@ -60,7 +59,7 @@ const SingleCampaign = () => {
             </Card.Body>
           </Card>
         ))}
-      </div>
+      </CardColumns>
       <div className="__button">
         <Button
           variant="contained"

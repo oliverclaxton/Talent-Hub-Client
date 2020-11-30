@@ -19,7 +19,7 @@ export default function SingleTalentCard(props) {
   );
 
   return (
-    <div>
+    <div style={{ display: "flex" }}>
       <CardColumns>
         <Card>
           <Card.Img variant="top" src={props.profileImageUrl} />
@@ -32,7 +32,7 @@ export default function SingleTalentCard(props) {
         </Card>
       </CardColumns>
 
-      <div className="info">
+      <div style={{ flexDirection: "column" }}>
         <h1>Current campaigns</h1>
         {props.campaigns.length === 0
           ? noCampaingsMessage
@@ -45,8 +45,6 @@ export default function SingleTalentCard(props) {
                 </ul>
               );
             })}
-      </div>
-      <div className="__button">
         <Link to={"/addCampaign"}>
           <Button variant="contained">Add Campaign</Button>
         </Link>

@@ -6,7 +6,8 @@ import { getAllCampaigns } from "../../store/campaigns/actions";
 import { selectAllCampaigns } from "../../store/campaigns/selectors";
 import { Button } from "@material-ui/core";
 import { selectToken } from "../../store/user/selectors";
-import "./AllCampaigns.css";
+
+import { CardColumns } from "react-bootstrap";
 
 const AllCampaigns = () => {
   const dispatch = useDispatch();
@@ -26,19 +27,17 @@ const AllCampaigns = () => {
   }, [dispatch]);
   return (
     <div>
-      <div>
-        <div className="campaign__card">
-          {allCampaigns.map((c) => (
-            <CampaignCard
-              key={c.id}
-              title={c.title}
-              description={c.description}
-              talents={c.users}
-              id={c.id}
-            />
-          ))}
-        </div>
-      </div>
+      <CardColumns>
+        {allCampaigns.map((c) => (
+          <CampaignCard
+            key={c.id}
+            title={c.title}
+            description={c.description}
+            talents={c.users}
+            id={c.id}
+          />
+        ))}
+      </CardColumns>
       <div className="__button">
         <Link to={"/addCampaign"}>
           <Button variant="contained">Add Campaign</Button>

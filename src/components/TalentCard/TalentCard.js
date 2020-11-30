@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import { Card } from "react-bootstrap";
-import "./TalentCard.css";
 
 export default function TalentCard(props) {
   const fullName = `${props.firstName} ${props.lastName}`;
