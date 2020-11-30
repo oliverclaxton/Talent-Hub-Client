@@ -30,25 +30,27 @@ export default function SingleTalentCard(props) {
             <Card.Text>{props.email}</Card.Text>
           </Card.Body>
         </Card>
-      </CardColumns>
 
-      <div style={{ flexDirection: "column" }}>
-        <h1>Current campaigns</h1>
-        {props.campaigns.length === 0
-          ? noCampaingsMessage
-          : props.campaigns.map((c) => {
-              return (
-                <ul key={c.id}>
-                  <Link to={`/campaigns/${c.id}`}>
-                    <li>{c.title}</li>
-                  </Link>
-                </ul>
-              );
-            })}
+        <div className="talent__info">
+          <h2 style={{ paddingBottom: 12 }}>Current Campaigns</h2>
+          {props.campaigns.length === 0
+            ? noCampaingsMessage
+            : props.campaigns.map((c) => {
+                return (
+                  <ul style={{ paddingLeft: 0, marginBottom: 8 }} key={c.id}>
+                    <Link to={`/campaigns/${c.id}`}>
+                      <Button style={{ fontSize: "1rem" }}>{c.title}</Button>
+                    </Link>
+                  </ul>
+                );
+              })}
+        </div>
         <Link to={"/addCampaign"}>
-          <Button variant="contained">Add Campaign</Button>
+          <Button style={{ marginTop: 8 }} variant="contained">
+            Add Campaign
+          </Button>
         </Link>
-      </div>
+      </CardColumns>
     </div>
   );
 }

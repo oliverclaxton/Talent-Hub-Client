@@ -15,3 +15,7 @@ code {
 .__button {
   margin: 40px 40px;
 }
+
+.talent__info {
+  text-decoration: none;
+}
