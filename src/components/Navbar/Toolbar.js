@@ -1,12 +1,13 @@
 import React from "react";
-import "./Navbar.css";
+import "./Toolbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken, selectUser } from "../../store/user/selectors";
 import { Link, useHistory } from "react-router-dom";
 import { Avatar, Button } from "@material-ui/core";
 import { logOut } from "../../store/user/actions";
+import { Nav, NavDropdown } from "react-bootstrap";
 
-const Navbar = () => {
+const Toolbar = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const userLoggedIn = useSelector(selectUser);
@@ -115,4 +116,4 @@ const Navbar = () => {
   ) : null;
 };
 
-export default Navbar;
+export default Toolbar;

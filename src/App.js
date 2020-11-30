@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 
 import { Switch, Route } from "react-router-dom";
-import Navbar from "../src/components/Navbar/Navbar";
+import Toolbar from "./components/Navbar/Toolbar";
 // import Loading from "./components/Loading";
 // import MessageBox from "./components/MessageBox";
 
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Toolbar />
       {/* <MessageBox />  */}
 
       <div className="app-page-wrapper">
