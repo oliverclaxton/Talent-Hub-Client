@@ -8,7 +8,9 @@ export default function TalentCard(props) {
 
   return (
     <Card className="talent__card">
-      <Card.Img variant="top" src={props.profileImageUrl} />
+      <Link to={`/talents/${props.id}`}>
+        <Card.Img variant="top" src={props.profileImageUrl} />
+      </Link>
       <Card.Body>
         <Card.Title>
           <h3>{fullName}</h3>
