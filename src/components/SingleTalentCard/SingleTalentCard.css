@@ -1,0 +1,8 @@
+.single__talent {
+  display: flex;
+  flex-basis: 20%;
+}
+
+.__button {
+  margin: 40px 40px;
+}

@@ -14,8 +14,6 @@ const MyCampaigns = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   //   const isLoading = useSelector(selectAppLoading);
-  //   const allCampaigns = useSelector(selectAllCampaigns);
-  //   console.log("i am all campaigns", allCampaigns);
 
   const token = useSelector(selectToken);
   const userLoggedIn = useSelector(selectUser);
@@ -29,27 +27,20 @@ const MyCampaigns = () => {
   }
 
   useEffect(() => {
-    // console.log("idljknfaljksnfdkljsfdnklfjnklsjnkfljnskld");
     dispatch(getSingleTalent(talentId));
   }, [talentId]);
 
   if (!myCampaigns.campaigns) return <h1>loading</h1>;
 
-  //   const campaignsToFilter = allCampaigns.filter((ac) => {
-  //     console.log(" im ac acnskjfhlkjfh", ac);
-  //   });
-
-  //   useEffect(() => {
-  //     dispatch(getAllCampaigns());
-  //   }, [dispatch]);
   return (
     <div>
       <div>
         {myCampaigns.campaigns.map((c) => {
-          console.log("i am mycampaings mapped", c);
+          // console.log("i am mycampaings mapped", c);
           return (
-            <div key={c.id}>
+            <div className="all__talents">
               <MyCampaignCard
+                key={c.id}
                 title={c.title}
                 description={c.description}
                 id={c.id}
@@ -58,9 +49,6 @@ const MyCampaigns = () => {
           );
         })}
       </div>
-      {/* <Link to={"/addCampaign"}>
-        <Button variant="contained">Add Campaign</Button>
-      </Link> */}
     </div>
   );
 };

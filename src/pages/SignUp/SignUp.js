@@ -20,7 +20,7 @@ export default function SignUp() {
   const history = useHistory();
 
   const setImage = (image) => {
-    console.log("image is ", image);
+    // console.log("image is ", image);
 
     setProfileImageUrl(image);
   };

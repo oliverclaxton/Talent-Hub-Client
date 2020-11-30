@@ -7,9 +7,10 @@ import { getAllTalents } from "../../store/user/actions";
 import { selectToken } from "../../store/user/selectors";
 import { makeStyles } from "@material-ui/core/styles";
 import "./AllTalents.css";
+// import { CardDeck } from "react-bootstrap";
+import { Card, CardColumns } from "react-bootstrap";
 
 const AllTalents = () => {
-  // const classes = useStyles();
   const dispatch = useDispatch();
   const history = useHistory();
   const [spacing, setSpacing] = React.useState(2);
@@ -28,23 +29,19 @@ const AllTalents = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <div>
-        <div className="talent__card">
-          {allTalents.map((t) => (
-            <TalentCard
-              key={t.id}
-              className="card"
-              firstName={t.firstName}
-              lastName={t.lastName}
-              email={t.email}
-              profileImageUrl={t.profileImageUrl}
-              id={t.id}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
+    <CardColumns>
+      {allTalents.map((t) => (
+        <TalentCard
+          key={t.id}
+          className="card"
+          firstName={t.firstName}
+          lastName={t.lastName}
+          email={t.email}
+          profileImageUrl={t.profileImageUrl}
+          id={t.id}
+        />
+      ))}
+    </CardColumns>
   );
 };
 

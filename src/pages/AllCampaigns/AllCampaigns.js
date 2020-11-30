@@ -30,7 +30,6 @@ const AllCampaigns = () => {
         <div className="campaign__card">
           {allCampaigns.map((c) => (
             <CampaignCard
-              className="card"
               key={c.id}
               title={c.title}
               description={c.description}
@@ -40,10 +39,11 @@ const AllCampaigns = () => {
           ))}
         </div>
       </div>
-
-      <Link to={"/addCampaign"}>
-        <Button variant="contained">Add Campaign</Button>
-      </Link>
+      <div className="__button">
+        <Link to={"/addCampaign"}>
+          <Button variant="contained">Add Campaign</Button>
+        </Link>
+      </div>
     </div>
   );
 };

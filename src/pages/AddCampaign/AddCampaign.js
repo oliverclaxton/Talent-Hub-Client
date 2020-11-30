@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAllTalents } from "../../store/talents/selectors";
 import { getAllTalents } from "../../store/talents/actions";
 import { addCampaign } from "../../store/campaigns/actions";
 import { useHistory } from "react-router-dom";
 import { selectToken } from "../../store/user/selectors";
+import { Button } from "@material-ui/core";
+
+import "./AddCampaign.css";
 
 export default function AddCampaign() {
   const dispatch = useDispatch();
   const history = useHistory();
-  //   const isLoading = useSelector(selectAppLoading);
   const allTalents = useSelector(selectAllTalents);
+  //   const isLoading = useSelector(selectAppLoading);
   //   console.log("i am all tallents", allTalents);
 
   const token = useSelector(selectToken);
@@ -42,15 +44,6 @@ export default function AddCampaign() {
     );
   }
 
-  //   console.log(
-  //     "i am form content",
-  //     title,
-  //     description,
-  //     contractLink,
-  //     briefLink,
-  //     date,
-  //     talent
-  //   );
   return (
     <Form as={Col} md={{ span: 6, offset: 3 }}>
       <h1 className="mt-5 mb-5">Add Campaign</h1>
@@ -68,6 +61,8 @@ export default function AddCampaign() {
       <Form.Group>
         <Form.Label>Description</Form.Label>
         <Form.Control
+          as="textarea"
+          rows={3}
           value={description}
           onChange={(event) => setDescription(event.target.value)}
           type="text"
@@ -125,10 +120,11 @@ export default function AddCampaign() {
           </Form.Control>
         </Form.Group>
       </Form.Group>
-
-      <Button variant="contained" type="submit" onClick={submitForm}>
-        Add
-      </Button>
+      <div className="__button">
+        <Button variant="contained" type="submit" onClick={submitForm}>
+          Add
+        </Button>
+      </div>
     </Form>
   );
 }
