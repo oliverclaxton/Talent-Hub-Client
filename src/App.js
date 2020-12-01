@@ -19,6 +19,7 @@ import SingleCampaign from "./pages/SingleCampaign/SingleCampaign";
 import AddCampaign from "./pages/AddCampaign/AddCampaign";
 import MyCampaigns from "./pages/MyCampaign/MyCampaigns";
 import MySingleCampaign from "./pages/MySingleCampaign/MySingleCampaign";
+import Messages from "./components/Messages/Messages";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <Toolbar />
-      {/* <MessageBox />  */}
+      <Messages />
 
       <div className="app-page-wrapper">
         <Switch>
