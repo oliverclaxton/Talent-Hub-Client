@@ -5,7 +5,6 @@ import { selectToken, selectUser } from "../../store/user/selectors";
 import { Link, useHistory } from "react-router-dom";
 import { Avatar, Button } from "@material-ui/core";
 import { logOut } from "../../store/user/actions";
-import { Nav, NavDropdown } from "react-bootstrap";
 
 const Toolbar = () => {
   const dispatch = useDispatch();

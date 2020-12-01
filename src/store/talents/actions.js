@@ -2,10 +2,10 @@ import { apiUrl } from "../../config/constants";
 import axios from "axios";
 // import { selectToken, selectUser } from "./selectors";
 import {
-  appLoading,
+  // appLoading,
   appDoneLoading,
-  showMessageWithTimeout,
-  setMessage,
+  // showMessageWithTimeout,
+  // setMessage,
 } from "../appState/actions";
 
 const getAllTalentsSuccess = (talents) => {

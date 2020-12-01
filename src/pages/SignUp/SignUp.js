@@ -4,10 +4,10 @@ import Container from "react-bootstrap/Container";
 import { signUp } from "../../store/user/actions";
 import { selectToken } from "../../store/user/selectors";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, Link } from "react-router-dom";
-import { Card, CardColumns, Col, Image } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import { Card, Col } from "react-bootstrap";
 import SignUpImageUploader from "../../components/ImageUploaders/SignUpImageUploader";
-import { Avatar, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState("");

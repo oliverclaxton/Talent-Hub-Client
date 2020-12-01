@@ -5,14 +5,13 @@ import TalentCard from "../../components/TalentCard/TalentCard";
 import { selectAllTalents } from "../../store/talents/selectors";
 import { getAllTalents } from "../../store/user/actions";
 import { selectToken } from "../../store/user/selectors";
-import { makeStyles } from "@material-ui/core/styles";
 
 import { CardColumns } from "react-bootstrap";
 
 const AllTalents = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [spacing, setSpacing] = React.useState(2);
+  // const [spacing, setSpacing] = React.useState(2);
   //   const isLoading = useSelector(selectAppLoading);
   const allTalents = useSelector(selectAllTalents);
   // console.log("i am all tallents", allTalents);

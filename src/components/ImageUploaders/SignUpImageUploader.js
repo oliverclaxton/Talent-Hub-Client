@@ -1,5 +1,5 @@
 import { Button } from "@material-ui/core";
-import React, { useState } from "react";
+import React from "react";
 
 export default function SignUpImageUploader(props) {
   // console.log("what are pros???", props);

@@ -7,7 +7,7 @@ import {
   getSingleCampaign,
 } from "../../store/campaigns/actions";
 import { Card, CardColumns } from "react-bootstrap";
-import { Button, Link } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import "../../index.css";
 
 const SingleCampaign = () => {
