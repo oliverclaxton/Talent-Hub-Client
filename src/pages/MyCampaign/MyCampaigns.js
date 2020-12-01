@@ -1,10 +1,7 @@
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import CampaignCard from "../../components/CampaignCard/CampaignCard";
-import { getAllCampaigns } from "../../store/campaigns/actions";
-import { selectAllCampaigns } from "../../store/campaigns/selectors";
-import { Button } from "@material-ui/core";
+
 import { selectToken, selectUser } from "../../store/user/selectors";
 import { selectSingleTalent } from "../../store/talents/selectors";
 import { getSingleTalent } from "../../store/talents/actions";
