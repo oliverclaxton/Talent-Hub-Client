@@ -82,7 +82,7 @@ const MySingleCampaignCard = (props) => {
           </a>
         </div>
         <div className="campaign__date">
-          <a href={props.breifLink}>
+          <a href={props.briefLink}>
             <Button>Brief</Button>
           </a>
         </div>
@@ -129,6 +129,7 @@ const MySingleCampaignCard = (props) => {
                 <Card.Title>
                   <h3>Caption</h3>
                 </Card.Title>
+                <hr />
                 <Card.Text>{ci.caption}</Card.Text>
                 {!ci.caption ? (
                   <Form as={Col}>

@@ -69,7 +69,7 @@ const SingleCampaign = () => {
           </a>
         </div>
         <div className="campaign__date">
-          <a href={singleCampaign.breifLink}>
+          <a href={singleCampaign.briefLink}>
             <Button>Brief</Button>
           </a>
         </div>
@@ -80,7 +80,11 @@ const SingleCampaign = () => {
           <Card key={ci.id} className="talent__card">
             <Card.Img src={ci.imageUrl} />
             <Card.Body>
-              <Card.Title>Caption : {ci.caption}</Card.Title>
+              <Card.Title>
+                <h3>Caption</h3>
+              </Card.Title>
+              <hr />
+              <Card.Text>{ci.caption}</Card.Text>
             </Card.Body>
           </Card>
         ))}
