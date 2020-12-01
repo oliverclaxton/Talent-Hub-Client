@@ -20,12 +20,10 @@ const HomePage = () => {
       <div className="main__message">
         {!token ? (
           <Link to="/login">
-            {" "}
             <Button> Let's get started</Button>
           </Link>
         ) : userLoggedIn.isAdmin ? (
           <Link to="/talents">
-            {" "}
             <Button> Let's get started</Button>
           </Link>
         ) : userLoggedIn.isTalent ? (

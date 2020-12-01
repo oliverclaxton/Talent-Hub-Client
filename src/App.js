@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 
 import { Switch, Route } from "react-router-dom";
-import Navbar from "../src/components/Navbar/Navbar";
+import Toolbar from "./components/Navbar/Toolbar";
 // import Loading from "./components/Loading";
 // import MessageBox from "./components/MessageBox";
 
@@ -30,26 +30,32 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Toolbar />
       {/* <MessageBox />  */}
 
-      <Switch>
-        {/* {isLoading ? <Loading /> : null} */}
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/talents" component={AllTalents} />
-        <Route exact path="/campaigns" component={AllCampaigns} />
-        <Route exact path="/talents/:talentId" component={SinlgeTalent} />
-        <Route exact path="/campaigns/:campaignId" component={SingleCampaign} />
-        <Route
-          exact
-          path="/myCampaigns/:campaignId"
-          component={MySingleCampaign}
-        />
-        <Route exact path="/addCampaign" component={AddCampaign} />
-        <Route exact path="/myCampaigns" component={MyCampaigns} />
-        <Route exact path="/" component={HomePage} />
-      </Switch>
+      <div className="app-page-wrapper">
+        <Switch>
+          {/* {isLoading ? <Loading /> : null} */}
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/talents" component={AllTalents} />
+          <Route exact path="/campaigns" component={AllCampaigns} />
+          <Route exact path="/talents/:talentId" component={SinlgeTalent} />
+          <Route
+            exact
+            path="/campaigns/:campaignId"
+            component={SingleCampaign}
+          />
+          <Route
+            exact
+            path="/myCampaigns/:campaignId"
+            component={MySingleCampaign}
+          />
+          <Route exact path="/addCampaign" component={AddCampaign} />
+          <Route exact path="/myCampaigns" component={MyCampaigns} />
+          <Route exact path="/" component={HomePage} />
+        </Switch>
+      </div>
     </div>
   );
 }

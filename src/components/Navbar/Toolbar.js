@@ -1,48 +1,17 @@
-import React, { useEffect } from "react";
-import "./Navbar.css";
+import React from "react";
+import "./Toolbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken, selectUser } from "../../store/user/selectors";
 import { Link, useHistory } from "react-router-dom";
 import { Avatar, Button } from "@material-ui/core";
 import { logOut } from "../../store/user/actions";
-import { makeStyles } from "@material-ui/core/styles";
+import { Nav, NavDropdown } from "react-bootstrap";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-  small: {
-    width: theme.spacing(3),
-    height: theme.spacing(3),
-  },
-  large: {
-    width: theme.spacing(7),
-    height: theme.spacing(7),
-  },
-}));
-
-const Navbar = () => {
-  const classes = useStyles();
+const Toolbar = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const userLoggedIn = useSelector(selectUser);
   const history = useHistory();
-  // console.log("i am token", token);
-  // console.log("i am user logged in imageurl", userLoggedIn.profileImageUrl);
-
-  //   function avatar(img) {
-  //     console.log("what is img?????", img);
-  //     return (
-  //       <Avatar
-  //         className={classes.large}
-  //         alt="user"
-  //         src={img ? new URL(img) : ""}
-  //       />
-  //     );
-  //   }
 
   return !token ? (
     <nav className="nav__main">
@@ -63,7 +32,6 @@ const Navbar = () => {
         <Link to="/signup" className="navbar__left__item1">
           <Button> Sign Up</Button>
         </Link>
-        {/* {avatar(userLoggedIn.profileImageUrl)} */}
         <Avatar className="navbar__left__item1" alt="user" src="" />
       </div>
     </nav>
@@ -101,7 +69,6 @@ const Navbar = () => {
           logout
         </Button>
 
-        {/* {avatar(userLoggedIn.profileImageUrl)} */}
         <Avatar
           className="navbar__left__item1"
           alt="user"
@@ -138,7 +105,7 @@ const Navbar = () => {
         >
           logout
         </Button>
-        {/* {avatar(userLoggedIn.profileImageUrl)} */}
+
         <Avatar
           className="navbar__left__item1"
           alt="user"
@@ -149,4 +116,4 @@ const Navbar = () => {
   ) : null;
 };
 
-export default Navbar;
+export default Toolbar;

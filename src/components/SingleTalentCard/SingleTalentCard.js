@@ -1,38 +1,16 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-// import Card from "@material-ui/core/Card";
-// import CardActionArea from "@material-ui/core/CardActionArea";
-// import CardActions from "@material-ui/core/CardActions";
-// import CardContent from "@material-ui/core/CardContent";
-// import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
-// import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
-import { Card, Col, Container } from "react-bootstrap";
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-    display: "flex",
-  },
-  media: {
-    height: 300,
-  },
-  font: {
-    fontFamily: "playfair display",
-  },
-});
+import { Card, CardColumns } from "react-bootstrap";
+import "../../index.css";
 
 export default function SingleTalentCard(props) {
-  console.log(" i am props,", props.campaigns);
-  const classes = useStyles();
+  // console.log(" i am props,", props);
 
   if (!props.campaigns) {
     return <h1>Loading</h1>;
   }
-  props.campaigns.map((c) => {
-    console.log("i am c", c);
-  });
+
   const fullName = `${props.firstName} ${props.lastName}`;
   const noCampaingsMessage = (
     <div>
@@ -41,68 +19,38 @@ export default function SingleTalentCard(props) {
   );
 
   return (
-    <div>
-      {/* <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia className={classes.media} image={props.profileImageUrl} />
-          <CardContent>
-            <Typography
-              className={classes.font}
-              gutterBottom
-              variant="h5"
-              component="h2"
-            >
-              {fullName}
-            </Typography>
-            <Typography
-              className={classes.font}
-              variant="body2"
-              color="textSecondary"
-              component="p"
-            >
-              {props.email}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card> */}
+    <div style={{ display: "flex" }}>
+      <CardColumns>
+        <Card>
+          <Card.Img variant="top" src={props.profileImageUrl} />
+          <Card.Body>
+            <Card.Title>
+              <h4>{fullName}</h4>
+            </Card.Title>
+            <Card.Text>{props.email}</Card.Text>
+          </Card.Body>
+        </Card>
 
-      <div>
-        <Container>
-          <Col>
-            <Card
-              style={{
-                width: "18rem",
-                marginTop: "20px",
-                marginBottom: "20px",
-              }}
-            >
-              <Card.Img variant="top" src={props.profileImageUrl} />
-              <Card.Body>
-                <Card.Title>{fullName}</Card.Title>
-                <Card.Text>{props.email}</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Container>
-      </div>
-
-      <div className="container">
-        <h1>Current campaigns</h1>
-        {props.campaigns.length === 0
-          ? noCampaingsMessage
-          : props.campaigns.map((c) => {
-              return (
-                <ul key={c.id}>
-                  <Link className={classes.font} to={`/campaigns/${c.id}`}>
-                    <li>{c.title}</li>
-                  </Link>
-                </ul>
-              );
-            })}
+        <div className="talent__info">
+          <h2 style={{ paddingBottom: 12 }}>Current Campaigns</h2>
+          {props.campaigns.length === 0
+            ? noCampaingsMessage
+            : props.campaigns.map((c) => {
+                return (
+                  <ul style={{ paddingLeft: 0, marginBottom: 8 }} key={c.id}>
+                    <Link to={`/campaigns/${c.id}`}>
+                      <Button style={{ fontSize: "1rem" }}>{c.title}</Button>
+                    </Link>
+                  </ul>
+                );
+              })}
+        </div>
         <Link to={"/addCampaign"}>
-          <Button variant="contained">Add Campaign</Button>
+          <Button style={{ marginTop: 8 }} variant="contained">
+            Add Campaign
+          </Button>
         </Link>
-      </div>
+      </CardColumns>
     </div>
   );
 }

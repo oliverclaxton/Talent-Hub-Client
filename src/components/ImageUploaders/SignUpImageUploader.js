@@ -2,7 +2,7 @@ import { Button } from "@material-ui/core";
 import React, { useState } from "react";
 
 export default function SignUpImageUploader(props) {
-  console.log("what are pros???", props);
+  // console.log("what are pros???", props);
 
   const setImageHandler = (url) => {
     // console.log("i am urtl", url);
@@ -15,7 +15,9 @@ export default function SignUpImageUploader(props) {
         cloudName: "drzludyk5",
         uploadPreset: "rvercepq",
         cropping: true,
-        croppingAspectRatio: 16 / 9,
+        croppingAspectRatio: 9 / 16,
+        width: 260,
+        height: 140,
       },
 
       (error, result) => {

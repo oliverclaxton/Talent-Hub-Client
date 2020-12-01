@@ -1,31 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
+import { Button } from "@material-ui/core";
 
 const CampaignCard = (props) => {
-  console.log("i am props", props);
+  // console.log("i am props", props);
   if (!props) {
     return <h1>Loading</h1>;
   }
 
   return (
-    <div>
+    <Card>
+      <Card.Body>
+        <Card.Header>
+          <h1>{props.title}</h1>
+        </Card.Header>
+        <Card.Text>
+          <p>{props.description}</p>
+        </Card.Text>
+      </Card.Body>
       <Link to={`/campaigns/${props.id}`}>
-        <Card
-          style={{
-            width: "18rem",
-            marginTop: "20px",
-            marginBottom: "20px",
-          }}
-        >
-          {/* <Card.Img variant="top" src={props.profileImageUrl} /> */}
-          <Card.Body>
-            <Card.Title> {props.title}</Card.Title>
-            <Card.Text> {props.description}</Card.Text>
-          </Card.Body>
-        </Card>
+        <Button variant="primary">See Campaign</Button>
       </Link>
-    </div>
+    </Card>
   );
 };
 

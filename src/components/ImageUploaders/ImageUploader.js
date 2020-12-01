@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../store/user/selectors";
@@ -6,12 +6,11 @@ import { addCampaignImage } from "../../store/campaigns/actions";
 import { Button } from "@material-ui/core";
 
 export default function ImageUploader(props) {
-  console.log("i am props in new imageuploader", props);
-
   const userLoggedIn = useSelector(selectUser);
   const dispatch = useDispatch();
 
-  console.log("logged imn user", userLoggedIn.id);
+  // console.log("i am props in new imageuploader", props);
+  // console.log("logged imn user", userLoggedIn.id);
 
   const userId = userLoggedIn.id;
   const campaignId = props.campaignId;
@@ -22,7 +21,9 @@ export default function ImageUploader(props) {
         cloudName: "drzludyk5",
         uploadPreset: "rvercepq",
         cropping: true,
-        croppingAspectRatio: 16 / 9,
+        croppingAspectRatio: 9 / 16,
+        width: 260,
+        height: 240,
       },
 
       (error, result) => {

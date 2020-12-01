@@ -5,9 +5,9 @@ import { signUp } from "../../store/user/actions";
 import { selectToken } from "../../store/user/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
-import { Col, Image } from "react-bootstrap";
+import { Card, CardColumns, Col, Image } from "react-bootstrap";
 import SignUpImageUploader from "../../components/ImageUploaders/SignUpImageUploader";
-import { Button } from "@material-ui/core";
+import { Avatar, Button } from "@material-ui/core";
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -20,7 +20,7 @@ export default function SignUp() {
   const history = useHistory();
 
   const setImage = (image) => {
-    console.log("image is ", image);
+    // console.log("image is ", image);
 
     setProfileImageUrl(image);
   };
@@ -94,25 +94,18 @@ export default function SignUp() {
         <Form.Group controlId="formBasicPassword">
           <SignUpImageUploader setImage={setImage} />
         </Form.Group>
-        <Form.Group>
-          {profileImageUrl ? (
-            <div>
-              <Form.Label>Profile Image Preview</Form.Label>
-              <Col className="mt-4" md={{ span: 8, offset: 2 }}>
-                <Image src={profileImageUrl} />
-              </Col>
-            </div>
-          ) : null}
-        </Form.Group>
+
+        {profileImageUrl ? (
+          <Card style={{ width: "18rem", margin: "auto" }}>
+            <Card.Img variant="top" src={profileImageUrl} />
+          </Card>
+        ) : null}
+
         <Form.Group className="mt-5">
           <Button variant="contained" type="submit" onClick={submitForm}>
             Sign up
           </Button>
         </Form.Group>
-
-        <Link to="/login">
-          <Button> Click here to Login</Button>
-        </Link>
       </Form>
     </Container>
   );
