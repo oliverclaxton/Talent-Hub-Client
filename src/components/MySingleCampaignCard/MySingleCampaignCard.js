@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { useDispatch } from "react-redux";
-import { addImageCaption } from "../../store/campaigns/actions";
+import {
+  addImageCaption,
+  setCamapaignStatus,
+} from "../../store/campaigns/actions";
 import Form from "react-bootstrap/Form";
 import { Card, Col, CardColumns } from "react-bootstrap";
 import ImageUploader from "../ImageUploaders/ImageUploader";
@@ -23,9 +26,9 @@ const MySingleCampaignCard = (props) => {
     dispatch(addImageCaption(caption, id, campaignId));
   }
 
-  function statusHandler(statusId) {
+  function statusHandler(statusId, cid) {
     console.log("i am stauts id when button is clicked", statusId);
-    // dispatch(setStatus(statusId));
+    dispatch(setCamapaignStatus(statusId, cid));
   }
 
   if (!props.campaignImages) {
@@ -60,7 +63,7 @@ const MySingleCampaignCard = (props) => {
         <Button
           style={{ marginBottom: 20 }}
           onClick={() => {
-            statusHandler(status);
+            statusHandler(status, campaignId);
           }}
         >
           Set Status
