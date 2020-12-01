@@ -1,6 +1,7 @@
 .main__message {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   /* border: solid red 1px; */
   margin-top: 200px;
   justify-content: space-around;
