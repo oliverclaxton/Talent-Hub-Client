@@ -16,7 +16,7 @@ export default function TalentCard(props) {
           <h3>{fullName}</h3>
         </Card.Title>
         <Link to={`/talents/${props.id}`}>
-          <Button variant="primary">See Campaigns</Button>
+          <Button>See Campaigns</Button>
         </Link>
       </Card.Body>
     </Card>

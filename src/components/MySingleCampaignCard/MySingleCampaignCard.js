@@ -14,7 +14,7 @@ const MySingleCampaignCard = (props) => {
   const dispatch = useDispatch();
 
   const [caption, setCaption] = useState("");
-  const [imageId, setImageId] = useState("");
+  // const [imageId, setImageId] = useState("");
   const [status, setStatus] = useState(0);
 
   console.log(status);
@@ -35,6 +35,38 @@ const MySingleCampaignCard = (props) => {
     return <h1>Loading</h1>;
   }
 
+  // console.log("date is!!", props.dueDate);
+
+  const dateFirst = props.dueDate.slice(8, 10);
+  // console.log("date first", dateFirst);
+  const dateMiddle = props.dueDate.slice(5, 7);
+  // console.log("date middle", dateMiddle);
+  const dateLast = props.dueDate.slice(0, 2);
+  // console.log("date last", dateLast);
+  const newDate = `${dateFirst}/${dateMiddle}/${dateLast}`;
+
+  // console.log("i am date", newDate);
+
+  let statusOfCampaign;
+
+  switch (props.statusId) {
+    case 1:
+      statusOfCampaign = <span>Complete</span>;
+
+      break;
+    case 2:
+      statusOfCampaign = <span>In progress</span>;
+
+      break;
+    case 3:
+      statusOfCampaign = <span>Approved</span>;
+
+      break;
+
+    default:
+      break;
+  }
+
   return (
     <div>
       <div className="campaign__info">
@@ -45,8 +77,15 @@ const MySingleCampaignCard = (props) => {
           <h4 className="campaign__description">{props.description}</h4>
         </div>
         <div>
-          <h6 className="campaign__date">Date to go live: {props.dueDate}</h6>
+          <h6 className="campaign__date">Date to go live: {newDate}</h6>
         </div>
+        <hr />
+        <h6>
+          Status:{" "}
+          <span style={{ textDecoration: "underline" }}>
+            {statusOfCampaign}
+          </span>
+        </h6>
       </div>
       <div className="campaign__status">
         <Form.Control
