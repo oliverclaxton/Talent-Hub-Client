@@ -7,7 +7,7 @@ import {
   getSingleCampaign,
 } from "../../store/campaigns/actions";
 import { Card, CardColumns } from "react-bootstrap";
-import { Button } from "@material-ui/core";
+import { Button, Link } from "@material-ui/core";
 import "../../index.css";
 
 const SingleCampaign = () => {
@@ -21,7 +21,7 @@ const SingleCampaign = () => {
 
   //   const isLoading = useSelector(selectAppLoading);
   const singleCampaign = useSelector(selectSingleCampaign);
-  console.log("i the single Campaign", singleCampaign.campaignImages);
+  console.log("i the single Campaign", singleCampaign);
 
   useEffect(() => {
     dispatch(getSingleCampaign(campaignId));
@@ -63,6 +63,16 @@ const SingleCampaign = () => {
           <h6 className="campaign__date">Date to go live: {newDate}</h6>
         </div>
         <hr />
+        <div className="campaign__date">
+          <a href={singleCampaign.contractLink}>
+            <Button>Contract</Button>
+          </a>
+        </div>
+        <div className="campaign__date">
+          <a href={singleCampaign.breifLink}>
+            <Button>Brief</Button>
+          </a>
+        </div>
       </div>
 
       <CardColumns>

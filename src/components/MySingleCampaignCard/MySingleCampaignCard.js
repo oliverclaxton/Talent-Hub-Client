@@ -76,6 +76,16 @@ const MySingleCampaignCard = (props) => {
         <div>
           <h4 className="campaign__description">{props.description}</h4>
         </div>
+        <div className="campaign__date">
+          <a href={props.contractLink}>
+            <Button>Contract</Button>
+          </a>
+        </div>
+        <div className="campaign__date">
+          <a href={props.breifLink}>
+            <Button>Brief</Button>
+          </a>
+        </div>
         <div>
           <h6 className="campaign__date">Date to go live: {newDate}</h6>
         </div>
@@ -87,6 +97,7 @@ const MySingleCampaignCard = (props) => {
           </span>
         </h6>
       </div>
+
       <div className="campaign__status">
         <Form.Control
           as="select"
