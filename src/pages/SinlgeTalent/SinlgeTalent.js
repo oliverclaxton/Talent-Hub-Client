@@ -19,7 +19,7 @@ const SinlgeTalent = () => {
 
   useEffect(() => {
     dispatch(getSingleTalent(talentId));
-  }, [dispatch]);
+  }, [dispatch, talentId]);
 
   return (
     <div>

@@ -26,7 +26,7 @@ const MyCampaigns = () => {
 
   useEffect(() => {
     dispatch(getSingleTalent(talentId));
-  }, [talentId]);
+  }, [dispatch, talentId]);
 
   if (!myCampaigns.campaigns) return <h1>loading</h1>;
 

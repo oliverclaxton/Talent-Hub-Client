@@ -25,7 +25,7 @@ const SingleCampaign = () => {
 
   useEffect(() => {
     dispatch(getSingleCampaign(campaignId));
-  }, [dispatch]);
+  }, [dispatch, campaignId]);
 
   const onDelete = (id) => {
     console.log("deleting campaign!", id);

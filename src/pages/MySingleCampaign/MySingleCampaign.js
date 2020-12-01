@@ -21,7 +21,7 @@ const MySingleCampaign = () => {
 
   useEffect(() => {
     dispatch(getSingleCampaign(campaignId));
-  }, [dispatch]);
+  }, [dispatch, campaignId]);
 
   return (
     <div>
