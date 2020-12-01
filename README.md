@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Talent Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Your very own space to manage your campaings and store all your content
 
-## Available Scripts
+## Why?
 
-In the project directory, you can run:
+The reason behind building this platform is to have a centralized hub where influencers, their managers can manage and store all content in one place. This platform is aimed at the influencers to be able to take control of their campaigns all in one place.
 
-### `npm start`
+## Achievements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Built a full-stack webisite with only 7 weeks experiance 
+- From idea to a working prototype in 2 weeks
+- Ideas built from the users perspective
+- Kanban project approach
+- Transparant and structured git version control
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## User Stories 
 
-### `npm test`
+- As a user i would like to login
+- As a user i would like to sign up
+- As an Admin i would like to view all the talents i manage 
+- As an Admin i would like to view all the campaigns that are running 
+- As an Admin i would like to add a campaign and assign it to a certian talent 
+- As an Admin i would like to be able to delete a certain campaign 
+- As a Talent i would like to view all my running campaigns 
+- As a Talent i would like to add content to a certain campaign 
+- As a Talent i would like to check and change the status of a campaign 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Project Board 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Project board here](https://github.com/users/oliverclaxton/projects/1)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Wire Frame
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Wire Frame here](https://docs.google.com/presentation/d/1Y3aKgCJtrKtGZswOS-4YPkM71f1rA-ce7fMzWfqyu0w/edit?usp=sharing)
 
-### `npm run eject`
+## Database Diagram
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[Database Diagram here](https://dbdiagram.io/d/5fbaba923a78976d7b7cf0ad)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Backend Repo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The backend side of this project is an Express server using Sequelize to manage the postgreSQL database
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[Backend Repo](https://github.com/oliverclaxton/Talent-Hub-Server)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
