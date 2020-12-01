@@ -10,24 +10,24 @@ const HomePage = () => {
   const userLoggedIn = useSelector(selectUser);
 
   return (
-    <div>
+    <div className="background__image">
       <div className="main__message">
         <h5>
           Welcome to the talent hub, your very own space to manage and organize
           your work.
         </h5>
       </div>
-      <div className="main__message">
+      <div className="main__message link__hover">
         {!token ? (
-          <Link to="/login">
+          <Link to="/login" className="link__hover">
             <Button> Let's get started</Button>
           </Link>
         ) : userLoggedIn.isAdmin ? (
-          <Link to="/talents">
+          <Link to="/talents" className="link__hover">
             <Button> Let's get started</Button>
           </Link>
         ) : userLoggedIn.isTalent ? (
-          <Link to="/myCampaigns">
+          <Link to="/myCampaigns" className="link__hover">
             <Button> Let's get started</Button>
           </Link>
         ) : null}

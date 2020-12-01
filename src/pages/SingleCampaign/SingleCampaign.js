@@ -50,28 +50,34 @@ const SingleCampaign = () => {
 
   return (
     <div>
-      <div className="campaign__info">
+      <div>
         <div>
           <h1>{singleCampaign.title}</h1>
+          <hr />
         </div>
+
         <div>
           <h4 className="campaign__description">
             {singleCampaign.description}
           </h4>
+          <hr />
         </div>
+
         <div>
           <h6 className="campaign__date">Date to go live: {newDate}</h6>
         </div>
-        <hr />
+
         <div className="campaign__date">
           <a href={singleCampaign.contractLink}>
             <Button>Contract</Button>
           </a>
         </div>
+
         <div className="campaign__date">
           <a href={singleCampaign.briefLink}>
             <Button>Brief</Button>
           </a>
+          <hr />
         </div>
       </div>
 

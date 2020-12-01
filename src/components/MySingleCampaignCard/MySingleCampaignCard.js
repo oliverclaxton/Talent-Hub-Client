@@ -69,27 +69,29 @@ const MySingleCampaignCard = (props) => {
 
   return (
     <div>
-      <div className="campaign__info">
+      <div>
         <div>
           <h1>{props.title}</h1>
+          <hr />
         </div>
         <div>
           <h4 className="campaign__description">{props.description}</h4>
+          <hr />
         </div>
         <div className="campaign__date">
           <a href={props.contractLink}>
             <Button>Contract</Button>
           </a>
         </div>
-        <div className="campaign__date">
+        <div>
           <a href={props.briefLink}>
             <Button>Brief</Button>
           </a>
         </div>
         <div>
           <h6 className="campaign__date">Date to go live: {newDate}</h6>
+          <hr />
         </div>
-        <hr />
         <h6>
           Status:{" "}
           <span style={{ textDecoration: "underline" }}>
@@ -98,19 +100,20 @@ const MySingleCampaignCard = (props) => {
         </h6>
       </div>
 
-      <div className="campaign__status">
+      <div>
         <Form.Control
           as="select"
           value={status}
           onChange={(event) => setStatus(event.target.value)}
           required
         >
-          <option value={0}>Select Status</option>
+          <option value={0}>Set Status</option>
           <option value={1}>Complete</option>
           <option value={2}>In Progress</option>
           <option value={3}>Approved</option>
         </Form.Control>
         <Button
+          variant="contained"
           style={{ marginBottom: 20 }}
           onClick={() => {
             statusHandler(status, campaignId);
