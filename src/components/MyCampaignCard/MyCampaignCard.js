@@ -37,14 +37,12 @@ const MyCampaignCard = (props) => {
             <Card.Header>
               <h1>{props.title}</h1>
             </Card.Header>
-            <Card.Text>
-              {props.description}
-              <hr />
-              <h6>
-                Status:{" "}
-                <span style={{ textDecoration: "underline" }}>{status}</span>
-              </h6>
-            </Card.Text>
+            <Card.Text>{props.description}</Card.Text>
+            <hr />
+            <h6>
+              Status:{" "}
+              <span style={{ textDecoration: "underline" }}>{status}</span>
+            </h6>
           </Card.Body>
           <Link to={`/myCampaigns/${props.id}`}>
             <Button>See Campaign</Button>

@@ -28,13 +28,6 @@ const addCampaignSuccess = (campaign) => {
   };
 };
 
-// const addCampaignImageSuccess = (campaignImage) => {
-//   return {
-//     type: "ADD_CAMPAIGN_SUCCESS",
-//     payload: campaignImage,
-//   };
-// };
-
 const campaignDeleteSuccess = (campaignId) => {
   return {
     type: "CAMPAIGN_DELETE_SUCCESS",
@@ -87,8 +80,6 @@ export const addCampaign = (
   talent
 ) => {
   return async (dispatch, getState) => {
-    // const { space, token } = selectUser(getState();
-    // console.log(name, content, imageUrl);
     dispatch(appLoading());
 
     const response = await axios.post(`${apiUrl}/campaigns`, {
@@ -175,7 +166,6 @@ export const addImageCaption = (caption, id, campaignId) => {
 };
 
 export const setCamapaignStatus = (statusId, campaignId) => {
-  // console.log(" i am campaignId ", caption, id, campaignId);s
   return async (dispatch, getState) => {
     dispatch(appLoading());
 

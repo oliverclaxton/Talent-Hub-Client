@@ -47,7 +47,7 @@ export default function SignUp() {
     <Container>
       <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
         <h2 className="mt-5 mb-5">Sign Up</h2>
-        <Form.Group controlId="formBasicName">
+        <Form.Group controlId="formBasicfirstName">
           <Form.Label>First name</Form.Label>
           <Form.Control
             value={firstName}
@@ -57,7 +57,7 @@ export default function SignUp() {
             required
           />
         </Form.Group>
-        <Form.Group controlId="formBasicName">
+        <Form.Group controlId="formBasiclastName">
           <Form.Label>Last name</Form.Label>
           <Form.Control
             value={lastName}
