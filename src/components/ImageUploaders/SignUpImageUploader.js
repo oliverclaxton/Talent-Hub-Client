@@ -16,6 +16,8 @@ export default function SignUpImageUploader(props) {
         uploadPreset: "rvercepq",
         cropping: true,
         croppingAspectRatio: 9 / 16,
+        width: 260,
+        height: 140,
       },
 
       (error, result) => {

@@ -18,7 +18,7 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .single__talent {
     flex-basis: 100%;
   }
@@ -49,5 +49,5 @@ body {
 }
 
 .app-page-wrapper {
-  padding: 0 40px;
+  padding: 0 20px;
 }

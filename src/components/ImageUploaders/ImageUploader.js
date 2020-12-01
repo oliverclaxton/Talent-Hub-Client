@@ -22,6 +22,8 @@ export default function ImageUploader(props) {
         uploadPreset: "rvercepq",
         cropping: true,
         croppingAspectRatio: 9 / 16,
+        width: 260,
+        height: 240,
       },
 
       (error, result) => {
