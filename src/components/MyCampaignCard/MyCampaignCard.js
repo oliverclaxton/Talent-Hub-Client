@@ -9,6 +9,26 @@ const MyCampaignCard = (props) => {
     return <h1>Loading</h1>;
   }
 
+  let status;
+
+  switch (props.status) {
+    case 1:
+      status = <span>Complete</span>;
+
+      break;
+    case 2:
+      status = <span>In progress</span>;
+
+      break;
+    case 3:
+      status = <span>Approved</span>;
+
+      break;
+
+    default:
+      break;
+  }
+
   return (
     <div>
       <div>
@@ -18,11 +38,16 @@ const MyCampaignCard = (props) => {
               <h1>{props.title}</h1>
             </Card.Header>
             <Card.Text>
-              <p>{props.description}</p>
+              {props.description}
+              <hr />
+              <h6>
+                Status:{" "}
+                <span style={{ textDecoration: "underline" }}>{status}</span>
+              </h6>
             </Card.Text>
           </Card.Body>
           <Link to={`/myCampaigns/${props.id}`}>
-            <Button variant="primary">See Campaign</Button>
+            <Button>See Campaign</Button>
           </Link>
         </Card>
       </div>

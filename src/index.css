@@ -19,3 +19,24 @@ code {
 .talent__info {
   text-decoration: none;
 }
+
+.campaign__info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0px 200px;
+}
+
+.campaign__description {
+  margin: 40px 40px;
+}
+
+.campaign__date {
+  margin: 20px 20px;
+}
+
+.campaign__status {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 400px;
+}

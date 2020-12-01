@@ -12,6 +12,9 @@ const MySingleCampaignCard = (props) => {
 
   const [caption, setCaption] = useState("");
   const [imageId, setImageId] = useState("");
+  const [status, setStatus] = useState(0);
+
+  console.log(status);
 
   const campaignId = props.id;
 
@@ -20,20 +23,48 @@ const MySingleCampaignCard = (props) => {
     dispatch(addImageCaption(caption, id, campaignId));
   }
 
+  function statusHandler(statusId) {
+    console.log("i am stauts id when button is clicked", statusId);
+    // dispatch(setStatus(statusId));
+  }
+
   if (!props.campaignImages) {
     return <h1>Loading</h1>;
   }
 
   return (
     <div>
-      <div>
-        <h1>{props.title}</h1>
+      <div className="campaign__info">
+        <div>
+          <h1>{props.title}</h1>
+        </div>
+        <div>
+          <h4 className="campaign__description">{props.description}</h4>
+        </div>
+        <div>
+          <h6 className="campaign__date">Date to go live: {props.dueDate}</h6>
+        </div>
       </div>
-      <div>
-        <h4>{props.description}</h4>
-      </div>
-      <div>
-        <h6>Date to go live: {props.dueDate}</h6>
+      <div className="campaign__status">
+        <Form.Control
+          as="select"
+          value={status}
+          onChange={(event) => setStatus(event.target.value)}
+          required
+        >
+          <option value={0}>Select Status</option>
+          <option value={1}>Complete</option>
+          <option value={2}>In Progress</option>
+          <option value={3}>Approved</option>
+        </Form.Control>
+        <Button
+          style={{ marginBottom: 20 }}
+          onClick={() => {
+            statusHandler(status);
+          }}
+        >
+          Set Status
+        </Button>
       </div>
 
       <CardColumns>
@@ -45,9 +76,7 @@ const MySingleCampaignCard = (props) => {
                 <Card.Title>
                   <h3>Caption</h3>
                 </Card.Title>
-                <Card.Text>
-                  <p>{ci.caption}</p>
-                </Card.Text>
+                <Card.Text>{ci.caption}</Card.Text>
                 {!ci.caption ? (
                   <Form as={Col}>
                     <Form.Group>

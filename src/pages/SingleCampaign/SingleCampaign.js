@@ -38,18 +38,21 @@ const SingleCampaign = () => {
 
   return (
     <div>
-      <div>
-        <h1>{singleCampaign.title}</h1>
+      <div className="campaign__info">
+        <div>
+          <h1>{singleCampaign.title}</h1>
+        </div>
+        <div>
+          <h4>{singleCampaign.description}</h4>
+        </div>
+        <div>
+          <h6>
+            Date to go live
+            {singleCampaign.dueDate}
+          </h6>
+        </div>
       </div>
-      <div>
-        <h4>{singleCampaign.description}</h4>
-      </div>
-      <div>
-        <h6>
-          Date to go live
-          {singleCampaign.dueDate}
-        </h6>
-      </div>
+
       <CardColumns>
         {singleCampaign.campaignImages.map((ci) => (
           <Card className="talent__card">
