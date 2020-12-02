@@ -116,7 +116,7 @@ export const deleteCampaign = (campaignId) => {
         // }
       );
 
-      // console.log("campaign deleted?", response.data);
+      console.log("campaign deleted?", response.data);
       dispatch(campaignDeleteSuccess(campaignId));
       dispatch(appDoneLoading());
     } catch (e) {
