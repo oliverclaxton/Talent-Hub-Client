@@ -20,6 +20,7 @@ import AddCampaign from "./pages/AddCampaign/AddCampaign";
 import MyCampaigns from "./pages/MyCampaign/MyCampaigns";
 import MySingleCampaign from "./pages/MySingleCampaign/MySingleCampaign";
 import Messages from "./components/Messages/Messages";
+import MyInstagram from "./pages/MyInstagram/MyInstagram";
 
 function App() {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ function App() {
           />
           <Route exact path="/addCampaign" component={AddCampaign} />
           <Route exact path="/myCampaigns" component={MyCampaigns} />
+          <Route exact path="/myInstagram" component={MyInstagram} />
           <Route exact path="/" component={HomePage} />
         </Switch>
       </div>

@@ -85,6 +85,10 @@ const Toolbar = () => {
         <Link to="/myCampaigns" className="navbar__left__item2">
           <Button>My Campaigns</Button>
         </Link>
+        <span> | </span>
+        <Link to="/myInstagram" className="navbar__left__item2">
+          <Button>My Instagram</Button>
+        </Link>
       </div>
       <div className="navbar__middle">
         <h1>Talent Hub</h1>
