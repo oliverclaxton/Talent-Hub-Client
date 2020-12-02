@@ -21,7 +21,7 @@ export default function SignUpImageUploader(props) {
       },
 
       (error, result) => {
-        console.log(error, result);
+        // console.log(error, result);
 
         if (result.event === "success") {
           setImageHandler(result.info.url);

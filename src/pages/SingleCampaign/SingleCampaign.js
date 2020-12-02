@@ -15,7 +15,7 @@ const SingleCampaign = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  console.log("what is params??", params.campaignId);
+  // console.log("what is params??", params.campaignId);
 
   const campaignId = params.campaignId;
 

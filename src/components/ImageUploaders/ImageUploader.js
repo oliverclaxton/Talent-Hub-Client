@@ -27,7 +27,7 @@ export default function ImageUploader(props) {
       },
 
       (error, result) => {
-        console.log(error, result);
+        // console.log(error, result);
 
         if (result.event === "success") {
           dispatch(addCampaignImage(result.info.url, userId, campaignId));

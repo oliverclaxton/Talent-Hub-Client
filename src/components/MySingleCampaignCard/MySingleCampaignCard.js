@@ -17,7 +17,7 @@ const MySingleCampaignCard = (props) => {
   // const [imageId, setImageId] = useState("");
   const [status, setStatus] = useState(0);
 
-  console.log(status);
+  // console.log(status);
 
   const campaignId = props.id;
 

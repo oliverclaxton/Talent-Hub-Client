@@ -91,7 +91,7 @@ export const addCampaign = (
       talent,
     });
 
-    console.log("Yep!", response.data.campaign);
+    // console.log("Yep!", response.data.campaign);
     dispatch(
       showMessageWithTimeout("success", false, response.data.message, 3000)
     );
@@ -116,7 +116,7 @@ export const deleteCampaign = (campaignId) => {
         // }
       );
 
-      console.log("campaign deleted?", response.data);
+      // console.log("campaign deleted?", response.data);
       dispatch(campaignDeleteSuccess(campaignId));
       dispatch(appDoneLoading());
     } catch (e) {
@@ -135,7 +135,7 @@ export const addCampaignImage = (imgUrl, userId, campaignId) => {
       campaignId,
     });
 
-    console.log("Yep!", response.data.campaign);
+    // console.log("Yep!", response.data.campaign);
     dispatch(
       showMessageWithTimeout("success", false, response.data.message, 3000)
     );
@@ -146,7 +146,7 @@ export const addCampaignImage = (imgUrl, userId, campaignId) => {
 };
 
 export const addImageCaption = (caption, id, campaignId) => {
-  console.log(" i am campaignId ", caption, id, campaignId);
+  // console.log(" i am campaignId ", caption, id, campaignId);
   return async (dispatch, getState) => {
     dispatch(appLoading());
 
@@ -155,7 +155,7 @@ export const addImageCaption = (caption, id, campaignId) => {
       id,
     });
 
-    console.log("Yep!", response.data.campaign);
+    // console.log("Yep!", response.data.campaign);
     dispatch(
       showMessageWithTimeout("success", false, response.data.message, 3000)
     );
@@ -174,7 +174,7 @@ export const setCamapaignStatus = (statusId, campaignId) => {
       campaignId,
     });
 
-    console.log("Yep!", response.data.campaign);
+    // console.log("Yep!", response.data.campaign);
     dispatch(
       showMessageWithTimeout("success", false, response.data.message, 3000)
     );

@@ -8,14 +8,14 @@ import SingleTalentCard from "../../components/SingleTalentCard/SingleTalentCard
 const SinlgeTalent = () => {
   const params = useParams();
 
-  console.log("what is params??", params.talentId);
+  // console.log("what is params??", params.talentId);s
 
   const talentId = params.talentId;
 
   const dispatch = useDispatch();
   //   const isLoading = useSelector(selectAppLoading);
   const singleTalent = useSelector(selectSingleTalent);
-  console.log("i the single talent", singleTalent);
+  // console.log("i the single talent", singleTalent);s
 
   useEffect(() => {
     dispatch(getSingleTalent(talentId));

@@ -41,7 +41,7 @@ export const getAllTalents = () => {
 };
 
 export const getSingleTalent = (talentId) => {
-  console.log("ehat is talentid???", talentId);
+  // console.log("ehat is talentid???", talentId);
   return async (dispatch, getState) => {
     try {
       const response = await axios.get(`${apiUrl}/talents/${talentId}`);
