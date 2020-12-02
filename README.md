@@ -1,5 +1,8 @@
 # Talent Hub
 
+
+![](https://media.giphy.com/media/W3QMaAwnr6Bche2mcG/giphy.gif)
+
 Your very own space to manage your campaings and store all your content
 
 ## Why?
