@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 import { Button } from "@material-ui/core";
 
 const CampaignCard = (props) => {
-  console.log("i am props", props);
+  // console.log("i am props", props);
   if (!props) {
     return <h1>Loading</h1>;
   }

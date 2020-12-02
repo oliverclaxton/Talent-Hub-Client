@@ -14,7 +14,7 @@ const AllCampaigns = () => {
   const history = useHistory();
   //   const isLoading = useSelector(selectAppLoading);
   const allCampaigns = useSelector(selectAllCampaigns);
-  console.log("i am all campaigns", allCampaigns);
+  // console.log("i am all campaigns", allCampaigns);
 
   const token = useSelector(selectToken);
 

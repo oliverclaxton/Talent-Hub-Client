@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
 const MyCampaignCard = (props) => {
-  console.log("i am props", props);
+  // console.log("i am props", props);
   if (!props) {
     return <h1>Loading</h1>;
   }

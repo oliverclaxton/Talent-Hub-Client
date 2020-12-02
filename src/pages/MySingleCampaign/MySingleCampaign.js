@@ -17,7 +17,7 @@ const MySingleCampaign = () => {
   const dispatch = useDispatch();
   //   const isLoading = useSelector(selectAppLoading);
   const singleCampaign = useSelector(selectSingleCampaign);
-  console.log("i the single Campaign", singleCampaign);
+  // console.log("i the single Campaign", singleCampaign);
 
   useEffect(() => {
     dispatch(getSingleCampaign(campaignId));

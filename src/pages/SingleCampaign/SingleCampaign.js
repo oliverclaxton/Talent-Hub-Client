@@ -21,14 +21,14 @@ const SingleCampaign = () => {
 
   //   const isLoading = useSelector(selectAppLoading);
   const singleCampaign = useSelector(selectSingleCampaign);
-  console.log("i the single Campaign", singleCampaign);
+  // console.log("i the single Campaign", singleCampaign);
 
   useEffect(() => {
     dispatch(getSingleCampaign(campaignId));
   }, [dispatch, campaignId]);
 
   const onDelete = (id) => {
-    console.log("deleting campaign!", id);
+    // console.log("deleting campaign!", id);
 
     dispatch(deleteCampaign(id));
     history.push("/campaigns");
@@ -36,17 +36,17 @@ const SingleCampaign = () => {
 
   if (!singleCampaign.campaignImages) return <h1>Loading</h1>;
 
-  console.log("i am date", singleCampaign.dueDate);
+  // console.log("i am date", singleCampaign.dueDate);
 
   const dateFirst = singleCampaign.dueDate.slice(8, 10);
-  console.log("date first", dateFirst);
+  // console.log("date first", dateFirst);
   const dateMiddle = singleCampaign.dueDate.slice(5, 7);
-  console.log("date middle", dateMiddle);
+  // console.log("date middle", dateMiddle);
   const dateLast = singleCampaign.dueDate.slice(0, 2);
-  console.log("date last", dateLast);
+  // console.log("date last", dateLast);
   const newDate = `${dateFirst}/${dateMiddle}/${dateLast}`;
 
-  console.log("i am date", newDate);
+  // console.log("i am date", newDate);
 
   return (
     <div>

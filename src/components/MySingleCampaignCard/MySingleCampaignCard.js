@@ -27,7 +27,7 @@ const MySingleCampaignCard = (props) => {
   }
 
   function statusHandler(statusId, cid) {
-    console.log("i am stauts id when button is clicked", statusId);
+    // console.log("i am stauts id when button is clicked", statusId);
     dispatch(setCamapaignStatus(statusId, cid));
   }
 

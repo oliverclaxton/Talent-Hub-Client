@@ -17,8 +17,8 @@ const MyCampaigns = () => {
   const userLoggedIn = useSelector(selectUser);
   const myCampaigns = useSelector(selectSingleTalent);
   const talentId = userLoggedIn.id;
-  console.log(" i am my user loggeding in", talentId);
-  console.log(" i am my campaignsssssss in MyCAMPAIGN", myCampaigns);
+  // console.log(" i am my user loggeding in", talentId);
+  // console.log(" i am my campaignsssssss in MyCAMPAIGN", myCampaigns);
 
   if (!token) {
     history.push("/");
@@ -33,7 +33,7 @@ const MyCampaigns = () => {
   return (
     <CardColumns>
       {myCampaigns.campaigns.map((c) => {
-        console.log("i am mycampaings mapped", c);
+        // console.log("i am mycampaings mapped", c);
         return (
           <div key={c.id} className="all__talents">
             <MyCampaignCard
