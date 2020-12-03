@@ -69,6 +69,12 @@ const MySingleCampaignCard = (props) => {
       break;
   }
 
+  // const onImageDelete = (id) => {
+  //   // console.log("deleting image!", id);
+
+  //   dispatch(deleteCampaignImage(id));
+  // };
+
   return !editMode ? (
     <div>
       <div>
@@ -267,8 +273,17 @@ const MySingleCampaignCard = (props) => {
                         submitForm(e, ci.id, campaignId);
                       }}
                     >
-                      Add Caption
+                      Update Caption
                     </Button>
+                    {/* <Button
+                      variant="contained"
+                      type="submit"
+                      onClick={() => {
+                        onImageDelete(ci.id, campaignId);
+                      }}
+                    >
+                      Delete Image
+                    </Button> */}
                   </Form>
                 ) : (
                   <Card.Text>
