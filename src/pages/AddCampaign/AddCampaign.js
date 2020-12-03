@@ -37,7 +37,6 @@ export default function AddCampaign() {
 
   function submitForm(event) {
     event.preventDefault();
-    history.push("/campaigns");
 
     dispatch(
       addCampaign(title, description, contractLink, briefLink, date, talent)
