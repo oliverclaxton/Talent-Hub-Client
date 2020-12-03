@@ -268,7 +268,6 @@ const MySingleCampaignCard = (props) => {
                       />
                     </Form.Group>
                     <Button
-                      variant="contained"
                       type="submit"
                       onClick={(e) => {
                         submitForm(e, ci.id, campaignId);
@@ -277,13 +276,18 @@ const MySingleCampaignCard = (props) => {
                       Update Caption
                     </Button>
                     <Button
-                      variant="contained"
-                      type="submit"
                       onClick={() => {
                         onImageDelete(ci.id);
                       }}
                     >
-                      Delete Image
+                      | Delete Image |
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        setEditMode(false);
+                      }}
+                    >
+                      Close
                     </Button>
                   </Form>
                 ) : (
