@@ -16,6 +16,7 @@ const MySingleCampaignCard = (props) => {
   const [caption, setCaption] = useState("");
   // const [imageId, setImageId] = useState("");
   const [status, setStatus] = useState(0);
+  const [editMode, setEditMode] = useState(false);
 
   // console.log(status);
 
@@ -23,6 +24,7 @@ const MySingleCampaignCard = (props) => {
 
   function submitForm(event, id, campaignId) {
     event.preventDefault();
+    setEditMode(false);
     dispatch(addImageCaption(caption, id, campaignId));
   }
 
@@ -67,7 +69,7 @@ const MySingleCampaignCard = (props) => {
       break;
   }
 
-  return (
+  return !editMode ? (
     <div>
       <div>
         <div>
@@ -134,6 +136,7 @@ const MySingleCampaignCard = (props) => {
                 </Card.Title>
                 <hr />
                 <Card.Text>{ci.caption}</Card.Text>
+                <hr />
                 {!ci.caption ? (
                   <Form as={Col}>
                     <Form.Group>
@@ -156,7 +159,128 @@ const MySingleCampaignCard = (props) => {
                       Add Caption
                     </Button>
                   </Form>
-                ) : null}
+                ) : (
+                  <Card.Text>
+                    <Button
+                      onClick={() => {
+                        setEditMode(true);
+                      }}
+                    >
+                      Edit Caption
+                    </Button>
+                  </Card.Text>
+                )}
+              </Card.Body>
+            </Card>
+          );
+        })}
+      </CardColumns>
+
+      <div className="__button">
+        <ImageUploader campaignId={props.id} />
+      </div>
+    </div>
+  ) : (
+    <div>
+      <div>
+        <div>
+          <h1>{props.title}</h1>
+          <hr />
+        </div>
+        <div>
+          <h4 className="campaign__description">{props.description}</h4>
+          <hr />
+        </div>
+        <div className="campaign__date">
+          <a href={props.contractLink}>
+            <Button>Contract</Button>
+          </a>
+        </div>
+        <div>
+          <a href={props.briefLink}>
+            <Button>Brief</Button>
+          </a>
+        </div>
+        <div>
+          <h6 className="campaign__date">Date to go live: {newDate}</h6>
+          <hr />
+        </div>
+        <h6>
+          Status:{" "}
+          <span style={{ textDecoration: "underline" }}>
+            {statusOfCampaign}
+          </span>
+        </h6>
+      </div>
+
+      <div>
+        <Form.Control
+          as="select"
+          value={status}
+          onChange={(event) => setStatus(event.target.value)}
+          required
+        >
+          <option value={0}>Set Status</option>
+          <option value={1}>Complete</option>
+          <option value={2}>In Progress</option>
+          <option value={3}>Approved</option>
+        </Form.Control>
+        <Button
+          variant="contained"
+          style={{ marginBottom: 20 }}
+          onClick={() => {
+            statusHandler(status, campaignId);
+          }}
+        >
+          Set Status
+        </Button>
+      </div>
+
+      <CardColumns>
+        {props.campaignImages.map((ci) => {
+          return (
+            <Card key={ci.id}>
+              <Card.Img src={ci.imageUrl} />
+              <Card.Body>
+                <Card.Title>
+                  <h3>Caption</h3>
+                </Card.Title>
+                <hr />
+                <Card.Text>{ci.caption}</Card.Text>
+                <hr />
+                {ci.caption ? (
+                  <Form as={Col}>
+                    <Form.Group>
+                      <Form.Control
+                        onChange={(event) => setCaption(event.target.value)}
+                        type="text"
+                        placeholder="Enter caption"
+                        as="textarea"
+                        rows={3}
+                        required
+                      />
+                    </Form.Group>
+                    <Button
+                      variant="contained"
+                      type="submit"
+                      onClick={(e) => {
+                        submitForm(e, ci.id, campaignId);
+                      }}
+                    >
+                      Add Caption
+                    </Button>
+                  </Form>
+                ) : (
+                  <Card.Text>
+                    <Button
+                      onClick={() => {
+                        setEditMode(true);
+                      }}
+                    >
+                      Edit Caption
+                    </Button>
+                  </Card.Text>
+                )}
               </Card.Body>
             </Card>
           );
