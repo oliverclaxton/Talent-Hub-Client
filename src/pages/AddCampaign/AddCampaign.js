@@ -76,7 +76,7 @@ export default function AddCampaign() {
           value={contractLink}
           onChange={(event) => setContractLink(event.target.value)}
           type="text"
-          placeholder="Contarct Link"
+          placeholder="Contract Link"
           required
         />
       </Form.Group>

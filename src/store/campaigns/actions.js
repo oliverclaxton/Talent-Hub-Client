@@ -5,6 +5,7 @@ import {
   appLoading,
   appDoneLoading,
   showMessageWithTimeout,
+  setMessage,
   // setMessage,
 } from "../appState/actions";
 
@@ -82,21 +83,31 @@ export const addCampaign = (
   return async (dispatch, getState) => {
     dispatch(appLoading());
 
-    const response = await axios.post(`${apiUrl}/campaigns`, {
-      title,
-      description,
-      contractLink,
-      briefLink,
-      date,
-      talent,
-    });
+    try {
+      const response = await axios.post(`${apiUrl}/campaigns`, {
+        title,
+        description,
+        contractLink,
+        briefLink,
+        date,
+        talent,
+      });
 
-    // console.log("Yep!", response.data.campaign);
-    dispatch(
-      showMessageWithTimeout("success", false, response.data.message, 3000)
-    );
-    dispatch(addCampaignSuccess(response.data.campaign));
-    dispatch(appDoneLoading());
+      // console.log("Yep!", response.data.campaign);
+      dispatch(
+        showMessageWithTimeout("success", false, response.data.message, 3000)
+      );
+      dispatch(addCampaignSuccess(response.data.campaign));
+      dispatch(appDoneLoading());
+    } catch (e) {
+      if (e.response) {
+        // console.log(error.response.data.message);
+        dispatch(setMessage("danger", true, e.response.data.message));
+      } else {
+        // console.log(error.message);
+        dispatch(setMessage("danger", true, e.message));
+      }
+    }
   };
 };
 
