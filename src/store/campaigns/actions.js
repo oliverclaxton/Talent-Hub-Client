@@ -36,6 +36,13 @@ const campaignDeleteSuccess = (campaignId) => {
   };
 };
 
+const campaignImageDeleteSuccess = (id) => {
+  return {
+    type: "CAMPAIGN_IMAGE_DELETE_SUCCESS",
+    payload: id,
+  };
+};
+
 export const getAllCampaigns = () => {
   return async (dispatch, getState) => {
     try {
@@ -132,6 +139,25 @@ export const deleteCampaign = (campaignId) => {
       dispatch(appDoneLoading());
     } catch (e) {
       console.error(e);
+    }
+  };
+};
+
+export const deleteCampaignImage = (id) => {
+  console.log("i am id from single campaign", id);
+  return async (dispatch, getState) => {
+    dispatch(appLoading());
+
+    try {
+      const response = await axios.delete(`${apiUrl}/campaigns/images`, {
+        data: { id },
+      });
+
+      console.log("campaign deleted?", response.data);
+      dispatch(campaignImageDeleteSuccess(id));
+      dispatch(appDoneLoading());
+    } catch (e) {
+      console.log(e);
     }
   };
 };
