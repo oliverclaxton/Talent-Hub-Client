@@ -30,7 +30,9 @@ const MyCampaigns = () => {
 
   if (!myCampaigns.campaigns) return <h1>loading</h1>;
 
-  return (
+  return myCampaigns.campaigns.length === 0 ? (
+    <p>No current Campaigns</p>
+  ) : (
     <CardColumns>
       {myCampaigns.campaigns.map((c) => {
         // console.log("i am mycampaings mapped", c);
