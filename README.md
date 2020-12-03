@@ -5,6 +5,9 @@
 
 Your very own space to manage your campaings and store all your content
 
+
+[Check out the website here](https://scen-talent-hub.netlify.app/)
+
 ## Why?
 
 The reason behind building this platform is to have a centralized hub where influencers, their managers can manage and store all content in one place. This platform is aimed at the influencers to be able to take control of their campaigns all in one place.
