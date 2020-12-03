@@ -9,6 +9,7 @@ import Form from "react-bootstrap/Form";
 import { Card, Col, CardColumns } from "react-bootstrap";
 import ImageUploader from "../ImageUploaders/ImageUploader";
 import "../../index.css";
+import { deleteCampaignImage } from "../../store/campaigns/actions";
 
 const MySingleCampaignCard = (props) => {
   const dispatch = useDispatch();
@@ -69,11 +70,11 @@ const MySingleCampaignCard = (props) => {
       break;
   }
 
-  // const onImageDelete = (id) => {
-  //   // console.log("deleting image!", id);
+  const onImageDelete = (id) => {
+    console.log("deleting image!", id);
 
-  //   dispatch(deleteCampaignImage(id));
-  // };
+    dispatch(deleteCampaignImage(id));
+  };
 
   return !editMode ? (
     <div>
@@ -172,7 +173,7 @@ const MySingleCampaignCard = (props) => {
                         setEditMode(true);
                       }}
                     >
-                      Edit Caption
+                      Edit
                     </Button>
                   </Card.Text>
                 )}
@@ -275,15 +276,15 @@ const MySingleCampaignCard = (props) => {
                     >
                       Update Caption
                     </Button>
-                    {/* <Button
+                    <Button
                       variant="contained"
                       type="submit"
                       onClick={() => {
-                        onImageDelete(ci.id, campaignId);
+                        onImageDelete(ci.id);
                       }}
                     >
                       Delete Image
-                    </Button> */}
+                    </Button>
                   </Form>
                 ) : (
                   <Card.Text>

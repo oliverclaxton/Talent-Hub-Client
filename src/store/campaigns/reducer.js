@@ -17,6 +17,21 @@ export default (state = initialState, action) => {
 
       return { ...state, all: newCampaigns };
 
+    case "CAMPAIGN_IMAGE_DELETE_SUCCESS":
+      console.log("payload", action.payload);
+      console.log("i am state before,", state.details);
+      const campaignImageId = action.payload;
+      const newCampaignsImages = state.details.campaignImages.filter(
+        (campaignImage) => {
+          return campaignImage.id !== campaignImageId;
+        }
+      );
+
+      return {
+        ...state,
+        details: { ...state.details, campaignImages: newCampaignsImages },
+      };
+
     default:
       return state;
   }
