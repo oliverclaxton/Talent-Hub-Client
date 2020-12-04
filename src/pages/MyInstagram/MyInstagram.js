@@ -33,7 +33,7 @@ const MyInstagram = () => {
   if (!singleTalent) return <h1>loading</h1>;
 
   if (!token) {
-    history.push("/");
+    history.push("/login");
   }
 
   //   let username = "scenagency";

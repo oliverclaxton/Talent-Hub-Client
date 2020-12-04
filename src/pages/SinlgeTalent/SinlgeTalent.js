@@ -1,15 +1,20 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleTalent } from "../../store/talents/actions";
 import { selectSingleTalent } from "../../store/talents/selectors";
 import SingleTalentCard from "../../components/SingleTalentCard/SingleTalentCard";
+import { selectToken } from "../../store/user/selectors";
 
 const SinlgeTalent = () => {
   const params = useParams();
-
+  const history = useHistory();
+  const token = useSelector(selectToken);
   // console.log("what is params??", params.talentId);s
 
+  if (!token) {
+    history.push("/login");
+  }
   const talentId = params.talentId;
 
   const dispatch = useDispatch();

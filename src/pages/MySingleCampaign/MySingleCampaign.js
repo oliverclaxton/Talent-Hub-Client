@@ -1,17 +1,22 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSingleCampaign } from "../../store/campaigns/selectors";
 import { getSingleCampaign } from "../../store/campaigns/actions";
 import MySingleCampaignCard from "../../components/MySingleCampaignCard/MySingleCampaignCard";
 
 import "./MySingleCampaign.css";
+import { selectToken } from "../../store/user/selectors";
 
 const MySingleCampaign = () => {
   const params = useParams();
+  const history = useHistory();
+  const token = useSelector(selectToken);
 
   // console.log("what is params??", params.campaignId);
-
+  if (!token) {
+    history.push("/login");
+  }
   const campaignId = params.campaignId;
 
   const dispatch = useDispatch();

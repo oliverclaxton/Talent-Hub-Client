@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addImageCaption,
   setCamapaignStatus,
@@ -10,17 +10,22 @@ import { Card, Col, CardColumns } from "react-bootstrap";
 import ImageUploader from "../ImageUploaders/ImageUploader";
 import "../../index.css";
 import { deleteCampaignImage } from "../../store/campaigns/actions";
+import { selectToken } from "../../store/user/selectors";
+import { useHistory } from "react-router-dom";
 
 const MySingleCampaignCard = (props) => {
   const dispatch = useDispatch();
-
+  const token = useSelector(selectToken);
+  const history = useHistory();
   const [caption, setCaption] = useState("");
   // const [imageId, setImageId] = useState("");
   const [status, setStatus] = useState(0);
   const [editMode, setEditMode] = useState(false);
 
   // console.log(status);
-
+  if (!token) {
+    history.push("/login");
+  }
   const campaignId = props.id;
 
   function submitForm(event, id, campaignId) {

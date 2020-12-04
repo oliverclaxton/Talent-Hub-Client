@@ -9,13 +9,18 @@ import {
 import { Card, CardColumns } from "react-bootstrap";
 import { Button } from "@material-ui/core";
 import "../../index.css";
+import { selectToken } from "../../store/user/selectors";
 
 const SingleCampaign = () => {
   const params = useParams();
   const history = useHistory();
   const dispatch = useDispatch();
-
+  const token = useSelector(selectToken);
   // console.log("what is params??", params.campaignId);
+
+  if (!token) {
+    history.push("/login");
+  }
 
   const campaignId = params.campaignId;
 

@@ -19,7 +19,7 @@ const AllCampaigns = () => {
   const token = useSelector(selectToken);
 
   if (!token) {
-    history.push("/");
+    history.push("/login");
   }
 
   useEffect(() => {

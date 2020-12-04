@@ -21,7 +21,7 @@ export default function AddCampaign() {
   const token = useSelector(selectToken);
 
   if (!token) {
-    history.push("/");
+    history.push("/login");
   }
 
   useEffect(() => {
