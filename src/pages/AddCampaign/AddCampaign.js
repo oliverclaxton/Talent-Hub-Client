@@ -41,6 +41,7 @@ export default function AddCampaign() {
     dispatch(
       addCampaign(title, description, contractLink, briefLink, date, talent)
     );
+    history.push("/campaigns");
   }
 
   return (

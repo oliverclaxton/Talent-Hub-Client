@@ -14,7 +14,7 @@ export default function SingleTalentCard(props) {
   const fullName = `${props.firstName} ${props.lastName}`;
   const noCampaingsMessage = (
     <div>
-      <p>No current Campigns</p>
+      <p>No current Campaigns</p>
     </div>
   );
 
