@@ -36,22 +36,28 @@ const MyInstagram = () => {
     history.push("/login");
   }
 
-  //   let username = "scenagency";
-  //   let INSTA = "https://instagram.com/";
-  //   let user = null;
-  //   let posts = null;
+  async function getInstagramPictures(profileName) {
+    const baseUrl =
+      "https://cors-anywhere.herokuapp.com/https://www.instagram.com";
+    const profileUrl = `${baseUrl}/${profileName}`;
+    const jsonDataUrl = `${profileUrl}/?__a=1`;
 
-  //   async function searchUser() {
-  //     let res = await fetch("https://www.instagram.com/naaomiross/?hl=en", {
-  //       method: "GET",
-  //     });
-  //     // let data = await res.json();
-  //     console.log(res);
-  //     // user = data.graphql.user;
-  //     // posts = user.edge_owner_to_timeline_media.edges;
-  //   }
+    const response = await fetch(jsonDataUrl);
+    const jsonData = await response.json();
+    const pictures = jsonData.graphql.user.edge_owner_to_timeline_media.edges;
 
-  //   searchUser();
+    console.log(pictures);
+
+    if (response.ok) {
+      return pictures;
+    } else {
+      throw new Error(pictures);
+    }
+  }
+
+  getInstagramPictures("scenagency")
+    .then((pictures) => console.log("Pictures:", pictures))
+    .catch((error) => console.error("Error:", error));
 
   return (
     <div className="container insta">
